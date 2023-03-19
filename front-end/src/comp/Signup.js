@@ -1,7 +1,7 @@
 import React from "react";
 import "./Signup.css";
 
-function Signup(props) {
+function Signup() {
   let handleSign = (e) => {
     e.preventDefault();
     let data = {
@@ -13,11 +13,7 @@ function Signup(props) {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
-    })
-      .then((res) => res.json())
-      .then((data) => {
-        console.log(data);
-      });
+    });
     e.target.email.value = "";
     e.target.password.value = "";
   };
@@ -32,11 +28,15 @@ function Signup(props) {
         <form onSubmit={handleSign}>
           <h2>Sign Up</h2>
           <label>Email address</label>
-          <input type="email" id="email" placeholder="Email" />
+          <input type="email" id="email" placeholder="Email" required />
           <label>Password</label>
-          <input type="password" id="password" placeholder="Password" />
+          <input
+            type="password"
+            id="password"
+            placeholder="Password"
+            required
+          />
           <button>Sign Up</button>
-          <a href="/">Forgot password ?</a>
         </form>
       </div>
     </div>

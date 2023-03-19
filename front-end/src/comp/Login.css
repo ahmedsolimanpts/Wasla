@@ -1,0 +1,135 @@
+.login-container {
+    min-height: 100vh;
+    width: 100%;
+    background-color: #eee;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.login-container .login {
+    width: 70%;
+    background-color: #fff;
+    height: 400px;
+    display: flex;
+    box-shadow: 0px 0px 15px 0px #0000008a;
+}
+.login .text {
+    background-color: var(--green-color);
+    color: #fff;
+    clip-path: polygon(0 0, 0 100%, 100% 0);
+    width: 100%;
+    text-align: center;
+}
+.login .text h1 {
+    text-align: center;
+    margin: 30px 0px 5px;
+    font-size: 32px;
+    letter-spacing: 4px;
+}
+.login form {
+    color: var(--gray-color);
+    padding: 20px;
+    width: 90%;
+}
+.login form h2 {
+    margin: 20px 0;
+    text-align: center;
+    font-size: 30px;
+}
+.login form label {
+    display: block;
+    margin-bottom: 5px;
+    margin-left: 10px;
+}
+.login form input {
+    padding: 10px;
+    border: 1px solid var(--gray-color);
+    border-radius: 50px;
+    width: 100%;
+    margin-bottom: 20px;
+}
+.login form input:focus {
+    outline: 1px solid var(--green-color);
+}
+.login form .loginBtn {
+    display: block;
+    width: 100%;
+    border: 1px solid var(--green-color);
+    background-color: var(--green-color);
+    padding: 10px;
+    border-radius: 50px;
+    font-size: 18px;
+    font-weight: bold;
+    color: #fff;
+    cursor: pointer;
+    margin-bottom: 10px;
+    transition: 0.3s;
+}
+.login form .loginBtn:hover {
+    background-color: #fff;
+    color: var(--green-color);
+}
+.login form a {
+    margin-left: 10px;
+    color: var(--green-color);
+    font-size: 14px;
+    transition: 0.3s;
+}
+.login form a:hover {
+    color: var(--gray-color);
+}
+.login-container .loginMsg {
+    background-color: #ffdbe3;
+    display: none;
+    justify-content: space-between;
+    align-items: center;
+    padding: 7px;
+    margin-bottom: 10px;
+    border-radius: 6px;
+}
+.login form .loginMsg h2 {
+    color: #cd1532;
+    font-size: 15px;
+    font-weight: 400;
+    text-align: center;
+    margin: 0;
+}
+.login form .loginMsg button {
+    background-color: #cd1532;
+    color: #fff;
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    margin: 0;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.login form .loginMsg button:hover {
+    background-color: #bf1e37;
+}
+@media (max-width: 991px) {
+    .login-container .login {
+        display: unset;
+        width: 100%;
+        min-height: 100vh;
+    }
+    .login .text {
+        clip-path: none;
+        padding: 15px;
+    }
+    .login .text h1 {
+        margin: 0;
+    }
+    .login form {
+        width: 100%;
+    }
+    .login form h2 {
+        margin: 0 0 20px;
+    }
+    .login form label {
+        font-size: 14px;
+    }
+    .login form .loginBtn {
+        margin-top: 15px;
+    }
+}
