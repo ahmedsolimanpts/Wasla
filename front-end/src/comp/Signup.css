@@ -69,15 +69,7 @@
     background-color: #fff;
     color: var(--green-color);
 }
-.signup form a {
-    margin-left: 10px;
-    color: var(--green-color);
-    font-size: 14px;
-    transition: 0.3s;
-}
-.signup form a:hover {
-    color: var(--gray-color);
-}
+
 @media (max-width: 991px) {
     .sign-container .signup {
         display: unset;

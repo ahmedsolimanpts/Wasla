@@ -1,11 +1,10 @@
 Website Url:
 - https://big-pizza.onrender.com/
 
-- localhost/api
-    - /user_permissions/
+- localhost/api/users/
         methods : GET
         description: 
-             ALL Website Users (Admin - Subadmin - User/ Vistor)
+            - ALL Website Users (Admin - Subadmin - User/ Vistor)
         Response-Body:
                 {
                     "id": NUMBER,
@@ -21,9 +20,9 @@ Website Url:
                 }
 
 - localhost/api/user/registration/
-    methods : POST New User
+    methods : POST
     description:
-    - ADD new User
+        - ADD new User
     RequestBody:
             {
 
@@ -69,4 +68,13 @@ Website Url:
     RequestBody:
             {
                 "token": STRING, # REQUIERD 
+            }
+
+- localhost/api/token/user-data/
+    methods : POST
+    description:
+        - get user data from access token
+    RequestBody:
+            {
+                "token": STRING, # REQUIERD
             }
