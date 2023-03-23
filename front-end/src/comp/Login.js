@@ -13,7 +13,7 @@ function Login(props) {
       email: e.target.emailLog.value,
     };
 
-    fetch(process.env.HOSTNAME + "/api/user/login/", {
+    fetch(process.env.REACT_APP_HOSTNAME + "/api/user/login/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dataLog),
@@ -23,7 +23,7 @@ function Login(props) {
         if (data.msg === "cant login") {
           document.querySelector(".loginMsg").style.cssText = "display: flex;";
         } else {
-          fetch(process.env.HOSTNAME + "/api/token/", {
+          fetch(process.env.REACT_APP_HOSTNAME + "/api/token/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dataLog),

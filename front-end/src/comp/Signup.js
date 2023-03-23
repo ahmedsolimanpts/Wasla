@@ -12,7 +12,7 @@ function Signup() {
       email: e.target.email.value,
     };
 
-    fetch(process.env.HOSTNAME + "/api/user/registration/", {
+    fetch(process.env.HOST_NAME + "/api/user/registration/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),
