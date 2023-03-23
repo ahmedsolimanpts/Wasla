@@ -1,0 +1,109 @@
+.nav {
+    background-color: var(--dark-color);
+    position: sticky;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 5px 15px;
+}
+.nav .logo {
+    cursor: pointer;
+}
+.nav .logo img {
+    width: 120px;
+    height: auto;
+}
+.nav .container-link {
+    flex: 1;
+    text-align: right;
+}
+.nav .container-link svg,
+.nav .container-link .loginmd {
+    display: none;
+}
+.nav .linksCat a {
+    color: #fff;
+    margin-right: 15px;
+    padding: 10px;
+    font-weight: bold;
+    font-size: 15px;
+    transition: 0.3s;
+}
+.nav .linksCat a.active,
+.nav .linksCat a:hover {
+    color: #24dac4;
+}
+.nav .linksCat .loginNav {
+    border: 1px solid #fff;
+    border-radius: 30px;
+    padding: 6px 15px;
+}
+.nav .linksCat .loginNav:hover {
+    background-color: #24dac4;
+    color: #fff;
+}
+
+@media (max-width: 991px) {
+    .nav .container-link {
+        position: relative;
+    }
+    .nav .container-link svg {
+        display: block;
+        color: #fff;
+        font-size: 20px;
+        cursor: pointer;
+        transition: 0.3s;
+        margin-left: auto;
+        border: 1px solid;
+        padding: 4px 12px;
+        border-radius: 6px;
+    }
+    .nav .container-link .loginmd {
+        display: block;
+        font-size: 15px;
+        color: #fff;
+        position: absolute;
+        right: 0;
+        top: 50%;
+        transform: translateY(-50%);
+        border: 1px solid;
+        padding: 5px 15px;
+        border-radius: 30px;
+        margin-right: 60px;
+        font-weight: bold;
+    }
+    .nav .linksCat {
+        display: none;
+        position: absolute;
+        right: -10px;
+        top: calc(100% + 15px);
+        background-color: #607D8B;
+        min-width: 200px;
+        text-align: left;
+        transition: 0.5s;
+    }
+    .nav .linksCat::before {
+        content: "";
+        position: absolute;
+        bottom: 99%;
+        right: 11px;
+        border: 12px solid;
+        border-color: transparent transparent #607d8b;
+    }
+    .nav .linksCat.open {
+        display: block;
+        transition: 0.5s;
+    }
+    .nav .linksCat a {
+        display: block;
+        width: 100%;
+        border-bottom: 1px solid #eeeeee38;
+    }
+    .nav .linksCat .loginNav {
+        display: none;
+    }
+}

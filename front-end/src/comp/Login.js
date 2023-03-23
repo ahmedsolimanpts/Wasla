@@ -1,6 +1,9 @@
 import React from "react";
 import "./Login.css";
 import jwt_decode from "jwt-decode";
+import { Link } from "react-router-dom";
+import logo from "../imgs/logo.png";
+import Nav from "./Nav";
 
 function Login(props) {
   let handleLogin = (e) => {
@@ -10,7 +13,7 @@ function Login(props) {
       email: e.target.emailLog.value,
     };
 
-    fetch("https://big-pizza.onrender.com/api/user/login/", {
+    fetch(process.env.HOSTNAME + "/api/user/login/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(dataLog),
@@ -20,7 +23,7 @@ function Login(props) {
         if (data.msg === "cant login") {
           document.querySelector(".loginMsg").style.cssText = "display: flex;";
         } else {
-          fetch("https://big-pizza.onrender.com/api/token/", {
+          fetch(process.env.HOSTNAME + "/api/token/", {
             method: "POST",
             headers: { "Content-Type": "application/json" },
             body: JSON.stringify(dataLog),
@@ -37,26 +40,37 @@ function Login(props) {
       });
   };
   return (
-    <div className="login-container">
+    <>
+      <Nav />
       <div className="login">
-        <div className="text">
-          <h1>Welcome Back!</h1>
-          <p>Enter to your account</p>
+        <div className="logo">
+          <img src={logo} alt="logo" />
         </div>
+        <h1>Good to see you again</h1>
         <form onSubmit={handleLogin}>
-          <h2>Login</h2>
           <label>Email address</label>
-          <input type="email" id="emailLog" placeholder="Your email" required />
+          <div className="box-input">
+            <i className="fa-solid fa-user-tie"></i>
+            <input
+              type="email"
+              id="emailLog"
+              placeholder="Your email"
+              required
+            />
+          </div>
           <label>Password</label>
-          <input
-            type="password"
-            id="passwordLog"
-            placeholder="Your password"
-            required
-          />
+          <div className="box-input">
+            <i className="fa-solid fa-lock-open fa-flip-horizontal"></i>
+            <input
+              type="password"
+              id="passwordLog"
+              placeholder="Your password"
+              required
+            />
+          </div>
           <div className="loginMsg">
             <h2> Incorrect email or password </h2>
-            <button
+            <div
               onClick={() => {
                 document.querySelector(".loginMsg").style.cssText =
                   "display: none;";
@@ -64,13 +78,16 @@ function Login(props) {
             >
               {" "}
               X{" "}
-            </button>
+            </div>
           </div>
           <button className="loginBtn">Login</button>
-          <a href="/">Forgot password ?</a>
+          <div className="box-btn">
+            <Link href="/">Forgot password ?</Link>
+            <Link to="/signup">Don't have an account ?</Link>
+          </div>
         </form>
       </div>
-    </div>
+    </>
   );
 }
 

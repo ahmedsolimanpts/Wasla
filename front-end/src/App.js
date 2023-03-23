@@ -8,16 +8,7 @@ function App() {
     <BrowserRouter>
       <div className="App">
         <Routes>
-          <Route
-            path="/"
-            element={
-              window.localStorage.getItem("token") ? (
-                <Home />
-              ) : (
-                <Navigate replace to={"/login"} />
-              )
-            }
-          />
+          <Route path="/" element={<Home />} />
           <Route
             path="/signup"
             element={
