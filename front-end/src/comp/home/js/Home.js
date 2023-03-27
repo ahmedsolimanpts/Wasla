@@ -1,13 +1,14 @@
 import React from "react";
-import Nav from "./Nav";
-import "./Home.css";
 import { Link } from "react-router-dom";
-import features_1 from "../imgs/features1.png";
-import features_2 from "../imgs/features2.png";
-import features_3 from "../imgs/features3.png";
-import host_1 from "../imgs/hosting-basic.png";
-import host_2 from "../imgs/hosting-advanced.png";
-import host_3 from "../imgs/hosting-professional.png";
+import "../css/Home.css";
+import Nav from "../../global/js/Nav";
+import features_1 from "../../../imgs/features1.png";
+import features_2 from "../../../imgs/features2.png";
+import features_3 from "../../../imgs/features3.png";
+import host_1 from "../../../imgs/hosting-basic.png";
+import host_2 from "../../../imgs/hosting-advanced.png";
+import host_3 from "../../../imgs/hosting-professional.png";
+import Footer from "../../global/js/Footer";
 
 function Home() {
   return (
@@ -32,28 +33,28 @@ function Home() {
             <div className="box">
               <i className="fa-solid fa-user-shield"></i>
               <h3>Security</h3>
-              <div className="info">
+              <div className="info-services">
                 <Link>Details</Link>
               </div>
             </div>
             <div className="box">
               <i className="fa-solid fa-screwdriver-wrench"></i>
               <h3>Fixing Issues</h3>
-              <div className="info">
+              <div className="info-services">
                 <Link>Details</Link>
               </div>
             </div>
             <div className="box">
               <i className="fa-solid fa-map-location-dot"></i>
               <h3>Location</h3>
-              <div className="info">
+              <div className="info-services">
                 <Link>Details</Link>
               </div>
             </div>
             <div className="box">
               <i className="fa-solid fa-bullhorn"></i>
               <h3>Marketing</h3>
-              <div className="info">
+              <div className="info-services">
                 <Link>Details</Link>
               </div>
             </div>
@@ -154,6 +155,7 @@ function Home() {
 
         {/* <div id="contact" className="contact"></div> */}
       </div>
+      <Footer />
     </>
   );
 }

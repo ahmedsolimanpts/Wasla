@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import { Link, NavLink } from "react-router-dom";
-import "./Nav.css";
-import logo from "../imgs/logo2.png";
+import "../css/Nav.css";
+import logo from "../../../imgs/logo2.png";
 
 function Nav() {
   useEffect(() => {}, []);

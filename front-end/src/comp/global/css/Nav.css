@@ -80,7 +80,7 @@
         display: none;
         position: absolute;
         right: -10px;
-        top: calc(100% + 15px);
+        top: calc(100% + 14px);
         background-color: #607D8B;
         min-width: 200px;
         text-align: left;

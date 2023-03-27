@@ -1,0 +1,226 @@
+Website Url:
+- https://big-pizza.onrender.com/
+
+- localhost/api/language/
+        methods : GET / POST
+        description:
+            - GET All Languages OR add new One
+        Request-Body for POST :
+                {
+                    "language": STRING, # REQUIERD
+                }
+
+- localhost/language/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Language By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "language": STRING, # REQUIERD
+                }
+
+
+- localhost/api/company-type/
+        methods : GET / POST
+        description:
+            - GET All Company Types OR add new One
+        Request-Body for POST OR:
+                {
+                    "type": STRING, # REQUIERD
+                    "language": PRIMARYKEY, # REQUIERD FOR TABEL NAME "language"
+                }
+
+- localhost/company-type/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Company Type By id OR update by ID  OR Delete company Type
+        Request-Body FOR UPDATE:
+                {
+                    "type": STRING, # REQUIERD
+                    "language":PRIMARY_KEY, # REQUIERD FOR TABEL NAME "language"
+                }
+
+
+- localhost/api/country/
+        methods : GET / POST
+        description:
+            - GET All Country OR add new One
+        Request-Body for POST :
+                {
+                    "country":  STRING, # REQUIERD
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+- localhost/country/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET country By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "country":  STRING, # REQUIERD
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+
+- localhost/api/city/
+        methods : GET / POST
+        description:
+            - GET All City OR add new One
+        Request-Body for POST :
+                {
+                    "city" :STRING, # REQUIERD
+                    "country": FOREGINKEY, # REQUIERD FOR TABEL "country"
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+- localhost/city/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET country By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "city" :STRING, # REQUIERD
+                    "country": FOREGINKEY, # REQUIERD FOR TABEL "country"
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+
+- localhost/api/city-district/
+        methods : GET / POST
+        description:
+            - GET All City District OR add new One
+        Request-Body for POST :
+                {
+                    "district" :STRING, # REQUIERD
+                    "city" : FOREGINKEY, # REQUIERD FOR TABEL "city"
+                    "country": FOREGINKEY, # REQUIERD FOR TABEL "country"
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+- localhost/city-district/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET city District By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "district" :STRING, # REQUIERD
+                    "city" : FOREGINKEY, # REQUIERD FOR TABEL "city"
+                    "country": FOREGINKEY, # REQUIERD FOR TABEL "country"
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+
+- localhost/api/vaild-information/
+        methods : GET / POST
+        description:
+            - GET All valid Informations OR add new One
+        Request-Body for POST :
+                {
+                    "valid" : BOOLEAN, # REQUIERD
+                    "informations": FOREGINKEY, # REQUIERD FOR TABEL "informations"
+                }
+
+- localhost/vaild-information/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET valid Informations  By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "valid" : BOOLEAN, # REQUIERD
+                    "informations": FOREGINKEY, # REQUIERD FOR TABEL "informations"
+                }
+
+
+- localhost/api/currency/
+        methods : GET / POST
+        description:
+            - GET All Currency OR add new One
+        Request-Body for POST :
+                {
+                    "currency" : STRING, # REQUIERD
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+- localhost/api/currency/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Currency By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "currency" : STRING, # REQUIERD
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+
+  - localhost/api/company-type-full-data/
+        methods : GET
+        description:
+            - GET ALL Company Type With all related Data
+        Response-Body Example:
+                {
+                "id": 3,
+                "language": {
+                    "id": 2,
+                    "language": "en"
+                },
+                "type": "Drink"
+                }
+
+
+- localhost/api/country-all/
+        methods : GET
+        description:
+            - GET  All countries with AND LANGUAGES VALUE
+
+        Response-Body EXAMPLE:
+             {
+                "id": 3,
+                "language": {
+                    "id": 2,
+                    "language": "en"
+                },
+                "country": "England"
+               }
+
+
+- localhost/api/city-all/
+        methods : GET
+        description:
+            - GET  All city with ALL Related VALUE
+
+        Response-Body EXAMPLE:
+             {
+                "id": 1,
+                "language": {
+                    "id": 2,
+                    "language": "en"
+                },
+                "country": {
+                    "id": 1,
+                    "country": "Egypt",
+                    "language": 2
+                },
+                "city": "Cairo"
+             }
+
+
+- localhost/api/city-district-all/
+        methods : GET
+        description:
+            - GET  All city district with ALL Related VALUE
+
+        Response-Body EXAMPLE:
+             {
+                "id": 1,
+                "language": {
+                    "id": 2,
+                    "language": "en"
+                },
+                "city": {
+                    "id": 1,
+                    "city": "Cairo",
+                    "language": 2,
+                    "country": 1
+                },
+                "district": "Blot"
+             }

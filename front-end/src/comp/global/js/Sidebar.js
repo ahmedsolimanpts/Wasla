@@ -1,5 +1,5 @@
 import React from "react";
-import "./Sidebar.css";
+import "../css/Sidebar.css";
 import { NavLink } from "react-router-dom";
 
 function Sidebar() {
@@ -14,9 +14,9 @@ function Sidebar() {
         <i className="fa-solid fa-gear fa-spin"></i>
       </div>
       <ul>
-        <NavLink to="/">
-          <i className="fa-regular fa-chart-bar fa-fw"></i>
-          <span>Test one</span>
+        <NavLink to="/company">
+          <i className="fa-regular fa-building fa-fw"></i>
+          <span>Company</span>
         </NavLink>
         <NavLink to="/login">
           <i className="fa-regular fa-chart-bar fa-fw"></i>
@@ -42,9 +42,9 @@ function Sidebar() {
           <i className="fa-regular fa-chart-bar fa-fw"></i>
           <span>Test seven</span>
         </NavLink>
-        <NavLink to="/login">
-          <i className="fa-regular fa-chart-bar fa-fw"></i>
-          <span>Test eight</span>
+        <NavLink to="/info">
+          <i className="fa-solid fa-circle-info fa-fw"></i>
+          <span>Information</span>
         </NavLink>
       </ul>
     </div>

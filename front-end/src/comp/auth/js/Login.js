@@ -1,11 +1,11 @@
 import React from "react";
-import "./Login.css";
+import "../css/Login.css";
 import jwt_decode from "jwt-decode";
 import { Link } from "react-router-dom";
-import logo from "../imgs/logo.png";
-import Nav from "./Nav";
+import logo from "../../../imgs/logo.png";
+import Nav from "../../global/js/Nav";
 
-function Login(props) {
+function Login() {
   let handleLogin = (e) => {
     e.preventDefault();
     let dataLog = {

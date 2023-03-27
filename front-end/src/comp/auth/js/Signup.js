@@ -1,8 +1,8 @@
 import React from "react";
-import "./Signup.css";
-import logo from "../imgs/logo.png";
+import "../css/Signup.css";
+import logo from "../../../imgs/logo.png";
 import { Link } from "react-router-dom";
-import Nav from "./Nav";
+import Nav from "../../global/js/Nav";
 
 function Signup() {
   let handleSign = (e) => {
@@ -12,7 +12,7 @@ function Signup() {
       email: e.target.email.value,
     };
 
-    fetch(process.env.HOST_NAME + "/api/user/registration/", {
+    fetch(process.env.REACT_APP_HOSTNAME + "/api/user/registration/", {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(data),

@@ -1,51 +1,3 @@
-.main-title {
-    text-transform: uppercase;
-    margin: 0 auto 80px;
-    width: fit-content;
-    padding: 10px 20px;
-    border: 2px solid var(--dark-color);
-    transition: 0.3s;
-    position: relative;
-    z-index: 1;
-    font-size: 30px;
-    color: var(--dark-color);
-}
-.main-title:hover {
-    color: white;
-    border: 2px solid white;
-    transition-delay: 0.3s;
-}
-.main-title::before, .main-title::after {
-    content: "";
-    width: 12px;
-    height: 12px;
-    position: absolute;
-    top: 50%;
-    background-color: var(--dark-color);
-    border-radius: 50%;
-    transform: translateY(-50%);
-    transition: 0.5s;
-}
-.main-title::before {
-    left: -30px;
-}
-.main-title::after {
-    right: -30px;
-}
-.main-title:hover::before {
-    left: 0;
-    border-radius: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-}
-.main-title:hover::after {
-    right: 0;
-    border-radius: 0;
-    z-index: -1;
-    width: 100%;
-    height: 100%;
-}
 .container {
     margin: 0 auto;
     padding: 0 15px;
@@ -138,13 +90,13 @@
     text-align: center;
     margin: 20px 0 40px;
 }
-.services .container .box .info {
+.services .container .box .info-services {
     background-color: #f9f9f9;
     text-align: right;
     padding: 15px;
     position: relative;
 }
-.services .container .box .info::before {
+.services .container .box .info-services::before {
     content: "0" counter(services);
     width: 80px;
     height: 100%;
@@ -160,7 +112,7 @@
     align-items: center;
     padding-right: 15px;
 }
-.services .container .box .info::after {
+.services .container .box .info-services::after {
     content: "";
     width: 50px;
     height: calc(100% + 0.2px);
@@ -170,11 +122,11 @@
     bottom: 0;
     transform: skewX(-30deg);
 }
-.services .container .box .info a {
+.services .container .box .info-services a {
     color: var(--dark-color);
     transition: 0.3s;
 }
-.services .container .box .info a:hover {
+.services .container .box .info-services a:hover {
     color: var(--active-color);
 }
 /* Start Features */

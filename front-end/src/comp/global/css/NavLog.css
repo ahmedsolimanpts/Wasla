@@ -1,0 +1,39 @@
+.navLog {
+    background-color: var(--dark-color);
+    position: sticky;
+    left: 0;
+    top: 0;
+    width: 100%;
+    z-index: 100;
+    display: flex;
+    align-items: center;
+    margin: 0 auto;
+    padding: 5px 15px;
+}
+.navLog .logo {
+    cursor: pointer;
+    flex: 1;
+}
+.navLog .logo img {
+    width: 120px;
+    height: auto;
+}
+.navLog .box-logout {
+    flex: 1;
+    text-align: right;
+}
+.navLog .box-logout .logout {
+    font-size: 15px;
+    padding: 6px 15px;
+    font-weight: bold;
+    border: 1px solid transparent;
+    border-radius: 30px;
+    transition: 0.3s;
+    cursor: pointer;
+    background-color: #009688;
+    color: #fff;
+}
+.navLog .box-logout .logout:hover {
+    background-color: transparent;
+    border: 1px solid #fff;
+}

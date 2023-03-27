@@ -1,0 +1,8 @@
+.admin {
+    background-color: var(--section-color);
+    min-height: 100vh;
+}
+.admin h1 {
+    margin: 0 auto;
+    padding: 50px 0 0;
+}

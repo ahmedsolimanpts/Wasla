@@ -1,0 +1,106 @@
+Website Url:
+- https://big-pizza.onrender.com/
+
+
+- localhost/api/company/
+        methods : GET /POST
+        description:
+            - GET All Company OR add new One
+        Request-Body:
+                {
+                    "name": STRING, # REQUIERD
+                    "verbose_name":STRING, # REQUIERD
+                    "companytype": FOREGIN_KEY, # REQUIERD  FOR TABEL NAME "CompanyType"
+                    "manager": FOREGIN_KEY, # REQUIERD FOR TABEL NAME "User"
+                }
+
+
+- localhost/api/company/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Company by ID OR UPDATE Company OR DELETE
+        Request-Body:
+                {
+                    "name": STRING, # REQUIERD
+                    "verbose_name":STRING, # REQUIERD
+                    "companytype": FOREGIN_KEY, # REQUIERD  FOR TABEL NAME "CompanyType"
+                    "manager": FOREGIN_KEY, # REQUIERD FOR TABEL NAME "User"
+                }
+
+
+- localhost/api/company-location/
+        methods : GET / POST
+        description:
+            - GET ALL Company  Location OR ADD New One
+        Request-Body:
+                {
+                    "company": FOREGIN_KEY, # REQUIERD  FOR TABEL NAME "Company"
+                    "location": FOREGIN_KEY, # REQUIERD FOR TABEL NAME "location"
+                }
+
+
+- localhost/api/company-location/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Company Location by ID OR UPDATE Company Location OR DELETE
+        Request-Body:
+                {
+                    "company": FOREGIN_KEY, # REQUIERD  FOR TABEL NAME "Company"
+                    "location": FOREGIN_KEY, # REQUIERD FOR TABEL NAME "location"
+
+                }
+
+ - localhost/api/company-address/
+        methods : GET / POST
+        description:
+            - GET ALL Company  Address OR ADD New One
+        Request-Body:
+                {
+                    "company": FOREGIN_KEY, # REQUIERD  FOR TABEL NAME "Company"
+                    "address": FOREGIN_KEY, # REQUIERD FOR TABEL NAME "address"
+                }
+
+- localhost/api/company-address/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Company Adress by ID OR UPDATE Company Address OR DELETE
+        Request-Body:
+                {
+                    "company": FOREGIN_KEY, # REQUIERD  FOR TABEL NAME "Company"
+                    "address": FOREGIN_KEY, # REQUIERD FOR TABEL NAME "address"
+
+                }
+
+ - localhost/api/company-logo/
+        methods : GET / POST
+        description:
+            - GET ALL Company Logo OR ADD New One
+        Request-Body:
+                {
+                    "company": FOREGIN_KEY, # REQUIERD  FOR TABEL NAME "Company"
+                    "logo": FOREGIN_KEY, # REQUIERD FOR TABEL NAME "logo"
+                }
+
+
+
+- localhost/api/company-logo/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Company Logo by ID OR UPDATE Company Logo OR DELETE
+        Request-Body:
+                {
+                    "company": FOREGIN_KEY, # REQUIERD  FOR TABEL NAME "Company"
+                    "logo": FOREGIN_KEY, # REQUIERD FOR TABEL NAME "logo"
+
+                }
+
+
+ - localhost/api/company-prcode/
+        methods : GET / POST
+        description:
+            - GET ALL Company prcode OR ADD New One
+        Request-Body:
+                {
+                    "company": FOREGIN_KEY, # REQUIERD  FOR TABEL NAME "Company"
+                    "qr_code": FOREGIN_KEY, # REQUIERD FOR TABEL NAME "QrCode"
+                }

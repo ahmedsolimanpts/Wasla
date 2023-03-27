@@ -1,0 +1,111 @@
+.all-items {
+    min-height: calc(100vh - 57px);
+    background-color: var(--section-color);
+    padding: 40px 0;
+}
+.all-items h1 {
+    color: var(--dark-color);
+    margin: 15px 15px 40px;
+    width: fit-content;
+    padding-bottom: 14px;
+    position: relative;
+}
+.all-items h1::before {
+    content: "";
+    width: 70%;
+    background-color: #fff;
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.all-items h1::after {
+    content: "";
+    width: 25%;
+    background-color: var(--dark-color);
+    height: 3px;
+    position: absolute;
+    bottom: 0;
+    left: 0;
+}
+.all-items .wrapper {
+    margin: 0 20px;
+}
+.all-items .wrapper .box {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 30px;
+    border-radius: 6px;
+}
+.all-items .wrapper .box h2 {
+    font-size: 25px;
+    margin-bottom: 20px;
+    color: var(--dark-color);
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+}
+.all-items .box .forms-box {
+    display: none;
+    transition: 0.5s;
+}
+.all-items .box .forms-box.open {
+    display: block;
+    transition: 0.5s;
+}
+.all-items .box .forms-box form {
+    margin-bottom: 15px;
+    padding: 10px;
+    border-radius: 6px;
+    background-color: #e9e9e9;
+}
+.all-items .box .forms-box form label {
+    display: block;
+    font-size: 15px;
+    color: var(--gray-color);
+    margin: 10px;
+}
+.all-items .box .forms-box form input {
+    width: 100%;
+    margin-bottom: 10px;
+    padding: 15px;
+    border-radius: 6px;
+    background-color: #fff;
+    border: 1px solid transparent;
+}
+.all-items .box .forms-box form input:focus {
+    border: 1px solid var(--dark-color);
+}
+.all-items .box .forms-box form .event-box {
+    width: 100%;
+    text-align: right;
+}
+.all-items .box .forms-box form .update {
+    font-size: 15px;
+    padding: 8px 18px;
+    border-radius: 30px;
+    background-color: var(--green-color);
+    color: #fff;
+    font-weight: bold;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.all-items .box .forms-box form .delete {
+    font-size: 15px;
+    padding: 8px 18px;
+    border-radius: 30px;
+    background-color: #c53636;
+    color: #fff;
+    font-weight: bold;
+    margin-left: 15px;
+    border: 1px solid transparent;
+    cursor: pointer;
+    transition: 0.3s;
+}
+.all-items .box .forms-box form .update:hover,
+.all-items .box .forms-box form .delete:hover {
+    border: 1px solid var(--dark-color);
+    color: var(--dark-color);
+    background-color: transparent;
+}
