@@ -1,25 +1,25 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Footer from "../../global/js/Footer";
 import NavLog from "../../global/js/NavLog";
 import Sidebar from "../../global/js/Sidebar";
-import "../css/Company.css";
+import Footer from "../../global/js/Footer";
+import "../css/Auth.css";
 
-function Company() {
+function Auth() {
   return (
     <>
       <NavLog />
       <Sidebar />
-      <div className="company">
-        <h2 className="main-title">Company</h2>
-        <div className="company-box">
-          <Link to="/company/create-company">
+      <div className="auth">
+        <h2 className="main-title">Authorizations</h2>
+        <div className="auth-box">
+          <Link to="/auth/create-auth">
             <i className="fa-solid fa-circle-plus"></i>
-            <span>Create New Company</span>
+            <span>Create New Auth</span>
           </Link>
-          <Link to="/company/all-companies">
+          <Link to="/auth/all-auth">
             <i className="fa-solid fa-globe"></i>
-            <span>All Companies</span>
+            <span>All Auth</span>
           </Link>
         </div>
       </div>
@@ -28,4 +28,4 @@ function Company() {
   );
 }
 
-export default Company;
+export default Auth;

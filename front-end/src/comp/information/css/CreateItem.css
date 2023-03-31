@@ -49,14 +49,20 @@
     flex-direction: column;
     margin-top: 20px;
 }
-.CreateItem .box form input {
+.CreateItem .box form input,
+.CreateItem .box form textarea {
     background-color: #eee;
     border: 2px solid transparent;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 20px;
 }
-.CreateItem .box form input:focus {
+.CreateItem .box form textarea {
+    height: 115px;
+    resize: none;
+}
+.CreateItem .box form input:focus,
+.CreateItem .box form textarea:focus {
     border: 2px solid var(--dark-color);
 }
 .CreateItem .box form label {

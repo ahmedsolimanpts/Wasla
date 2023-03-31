@@ -8,6 +8,7 @@ function CreateItem() {
   const [langs, setLang] = useState();
   const [countries, setCountry] = useState();
   const [cities, setCity] = useState();
+  const [districts, setDistricts] = useState();
 
   const handleLang = (e) => {
     e.preventDefault();
@@ -124,6 +125,84 @@ function CreateItem() {
     e.target.addCityDistrict.value = "";
   };
 
+  const handleCurrency = (e) => {
+    e.preventDefault();
+    fetch(process.env.REACT_APP_HOSTNAME + "/api/currency/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        currency: e.target.addCurrency.value,
+        language: e.target.chooseLang.value,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        let error = data.currency[0];
+        if (error === "currency with this currency already exists.") {
+          document.querySelector(".addCurrency .infoMsg").style.cssText =
+            "display: flex;";
+        } else {
+          window.location.reload();
+        }
+      });
+    e.target.addCurrency.value = "";
+  };
+
+  const handlePhone = (e) => {
+    e.preventDefault();
+    fetch(process.env.REACT_APP_HOSTNAME + "/api/phone/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        phone: e.target.addPhone.value,
+      }),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        let error = data.phone[0];
+        if (error === "phone with this phone already exists.") {
+          document.querySelector(".addPhone .infoMsg").style.cssText =
+            "display: flex;";
+        } else {
+          window.location.reload();
+        }
+      });
+    e.target.addPhone.value = "";
+  };
+
+  const handleLocation = (e) => {
+    e.preventDefault();
+    fetch(process.env.REACT_APP_HOSTNAME + "/api/location/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        longitude: e.target.addLongitude.value,
+        latitude: e.target.addLatitude.value,
+      }),
+    });
+    window.location.reload();
+    e.target.addLongitude.value = "";
+    e.target.addLatitude.value = "";
+  };
+
+  const handleAddress = (e) => {
+    e.preventDefault();
+    fetch(process.env.REACT_APP_HOSTNAME + "/api/address/", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        district: e.target.chooseDistrict.value,
+        building_number: e.target.addBuilding.value,
+        street: e.target.addStreet.value,
+        description: e.target.addDescription.value,
+      }),
+    });
+    window.location.reload();
+    e.target.addBuilding.value = "";
+    e.target.addStreet.value = "";
+    e.target.addDescription.value = "";
+  };
+
   const getLangData = async () => {
     const res = await fetch(
       process.env.REACT_APP_HOSTNAME + "/api/language/"
@@ -145,10 +224,18 @@ function CreateItem() {
     setCity(res);
   };
 
+  const getDistrictData = async () => {
+    const res = await fetch(
+      process.env.REACT_APP_HOSTNAME + "/api/city-district/"
+    ).then((res) => res.json());
+    setDistricts(res);
+  };
+
   useEffect(() => {
     getLangData();
     getCountryData();
     getCityData();
+    getDistrictData();
   }, []);
 
   return (
@@ -293,7 +380,7 @@ function CreateItem() {
                   X{" "}
                 </div>
               </div>
-              <button type="submit"> Add Country </button>
+              <button type="submit"> Add City </button>
             </form>
           </div>
 
@@ -346,7 +433,127 @@ function CreateItem() {
                   X{" "}
                 </div>
               </div>
-              <button type="submit"> Add Country </button>
+              <button type="submit"> Add District </button>
+            </form>
+          </div>
+
+          <div className="box">
+            <h2>Currency</h2>
+            <form onSubmit={handleCurrency} className="addCurrency">
+              <input
+                type="text"
+                placeholder="example=[EGP]"
+                id="addCurrency"
+                required
+              />
+
+              <label>Choose Language</label>
+              <select id="chooseLang" required>
+                {langs &&
+                  langs.map((lang) => (
+                    <option key={lang.id} value={lang.id}>
+                      {lang.language}
+                    </option>
+                  ))}
+              </select>
+
+              <div className="infoMsg">
+                <h2> Currency already Added </h2>
+                <div
+                  onClick={() => {
+                    document.querySelector(
+                      ".addCurrency .infoMsg"
+                    ).style.cssText = "display: none;";
+                  }}
+                >
+                  {" "}
+                  X{" "}
+                </div>
+              </div>
+              <button type="submit"> Add Currency </button>
+            </form>
+          </div>
+
+          <div className="box">
+            <h2>Phone</h2>
+            <form onSubmit={handlePhone} className="addPhone">
+              <input
+                type="text"
+                placeholder="Phone number"
+                id="addPhone"
+                required
+              />
+
+              <div className="infoMsg">
+                <h2> Phone already Added </h2>
+                <div
+                  onClick={() => {
+                    document.querySelector(".addPhone .infoMsg").style.cssText =
+                      "display: none;";
+                  }}
+                >
+                  {" "}
+                  X{" "}
+                </div>
+              </div>
+              <button type="submit"> Add Phone </button>
+            </form>
+          </div>
+
+          <div className="box">
+            <h2>Location</h2>
+            <form onSubmit={handleLocation} className="addLocation">
+              <label>Longitude</label>
+              <input
+                type="text"
+                placeholder="Longitude"
+                id="addLongitude"
+                required
+              />
+
+              <label>Latitude</label>
+              <input
+                type="text"
+                placeholder="Latitude"
+                id="addLatitude"
+                required
+              />
+
+              <button type="submit"> Add Location </button>
+            </form>
+          </div>
+
+          <div className="box">
+            <h2>Address</h2>
+            <form onSubmit={handleAddress} className="addAddress">
+              <label>Choose District</label>
+              <select id="chooseDistrict" required>
+                {districts &&
+                  districts.map((district) => (
+                    <option key={district.id} value={district.id}>
+                      {district.district}
+                    </option>
+                  ))}
+              </select>
+
+              <label>Street</label>
+              <input type="text" placeholder="Street" id="addStreet" required />
+
+              <label>Building Number</label>
+              <input
+                type="text"
+                placeholder="Building number"
+                id="addBuilding"
+                required
+              />
+
+              <label>Description</label>
+              <textarea
+                placeholder="Description"
+                id="addDescription"
+              ></textarea>
+
+              <button type="submit"> Add Address </button>
             </form>
           </div>
         </div>

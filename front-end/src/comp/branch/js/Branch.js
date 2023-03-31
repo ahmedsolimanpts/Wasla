@@ -1,25 +1,26 @@
 import React from "react";
 import { Link } from "react-router-dom";
-import Footer from "../../global/js/Footer";
 import NavLog from "../../global/js/NavLog";
 import Sidebar from "../../global/js/Sidebar";
-import "../css/Company.css";
+import Footer from "../../global/js/Footer";
+import "../css/Branch.css";
 
-function Company() {
+function Branch() {
   return (
     <>
       <NavLog />
       <Sidebar />
-      <div className="company">
-        <h2 className="main-title">Company</h2>
-        <div className="company-box">
-          <Link to="/company/create-company">
+      <div className="branch">
+        <h2 className="main-title">Branch</h2>
+        <div className="branch-box">
+          <Link to="/branch/create-branch">
             <i className="fa-solid fa-circle-plus"></i>
-            <span>Create New Company</span>
+            <span>Create New Branch</span>
           </Link>
-          <Link to="/company/all-companies">
+
+          <Link to="/branch/all-branches">
             <i className="fa-solid fa-globe"></i>
-            <span>All Companies</span>
+            <span>All Branches</span>
           </Link>
         </div>
       </div>
@@ -28,4 +29,4 @@ function Company() {
   );
 }
 
-export default Company;
+export default Branch;

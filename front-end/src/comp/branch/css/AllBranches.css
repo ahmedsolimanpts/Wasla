@@ -1,16 +1,16 @@
-.all-companies {
+.all-branches {
     min-height: calc(100vh - 57px);
     background-color: var(--section-color);
     padding: 40px 0;
 }
-.all-companies h1 {
+.all-branches h1 {
     color: var(--dark-color);
     margin: 15px 15px 40px;
     width: fit-content;
     padding-bottom: 14px;
     position: relative;
 }
-.all-companies h1::before {
+.all-branches h1::before {
     content: "";
     width: 70%;
     background-color: #fff;
@@ -19,7 +19,7 @@
     bottom: 0;
     left: 0;
 }
-.all-companies h1::after {
+.all-branches h1::after {
     content: "";
     width: 25%;
     background-color: var(--dark-color);
@@ -28,16 +28,16 @@
     bottom: 0;
     left: 0;
 }
-.all-companies .wrapper {
+.all-branches .wrapper {
     margin: 0 20px;
 }
-.all-companies .wrapper .box {
+.all-branches .wrapper .box {
     background-color: #fff;
     padding: 20px;
     margin-bottom: 30px;
     border-radius: 6px;
 }
-.all-companies .wrapper .box h2 {
+.all-branches .wrapper .box h2 {
     font-size: 25px;
     margin-bottom: 20px;
     color: var(--dark-color);
@@ -45,28 +45,28 @@
     display: flex;
     justify-content: space-between;
 }
-.all-companies .box .forms-box {
+.all-branches .box .forms-box {
     display: none;
     transition: 0.5s;
 }
-.all-companies .box .forms-box.open {
+.all-branches .box .forms-box.open {
     display: block;
     transition: 0.5s;
 }
-.all-companies .box .forms-box form {
+.all-branches .box .forms-box form {
     margin-bottom: 15px;
     padding: 10px;
     border-radius: 6px;
     background-color: #e9e9e9;
 }
-.all-companies .box .forms-box form label {
+.all-branches .box .forms-box form label {
     display: block;
     font-size: 15px;
     color: var(--gray-color);
     margin: 10px;
 }
-.all-companies .box .forms-box form input,
-.all-companies .box .forms-box form select {
+.all-branches .box .forms-box form input,
+.all-branches .box .forms-box form select {
     width: 100%;
     margin-bottom: 10px;
     padding: 15px;
@@ -74,14 +74,14 @@
     background-color: #fff;
     border: 1px solid transparent;
 }
-.all-companies .box .forms-box form input:focus {
+.all-branches .box .forms-box form input:focus {
     border: 1px solid var(--dark-color);
 }
-.all-companies .box .forms-box form .event-box {
+.all-branches .box .forms-box form .event-box {
     width: 100%;
     text-align: right;
 }
-.all-companies .box .forms-box form .update {
+.all-branches .box .forms-box form .update {
     font-size: 15px;
     padding: 8px 18px;
     border-radius: 30px;
@@ -92,7 +92,7 @@
     cursor: pointer;
     transition: 0.3s;
 }
-.all-companies .box .forms-box form .delete {
+.all-branches .box .forms-box form .delete {
     font-size: 15px;
     padding: 8px 18px;
     border-radius: 30px;
@@ -104,8 +104,8 @@
     cursor: pointer;
     transition: 0.3s;
 }
-.all-companies .box .forms-box form .update:hover,
-.all-companies .box .forms-box form .delete:hover {
+.all-branches .box .forms-box form .update:hover,
+.all-branches .box .forms-box form .delete:hover {
     border: 1px solid var(--dark-color);
     color: var(--dark-color);
     background-color: transparent;

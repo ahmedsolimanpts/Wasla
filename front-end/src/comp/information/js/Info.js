@@ -17,7 +17,7 @@ function Info() {
             <i className="fa-solid fa-circle-plus"></i>
             <span>Create New Item</span>
           </Link>
-          <Link to="/info/items">
+          <Link to="/info/all-items">
             <i className="fa-solid fa-globe"></i>
             <span>All Items</span>
           </Link>

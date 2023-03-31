@@ -1,16 +1,16 @@
-.createCompany {
+.createAuth {
     min-height: calc(100vh - 57px);
     background-color: var(--section-color);
     padding: 40px 0;
 }
-.createCompany h1 {
+.createAuth h1 {
     color: var(--dark-color);
     margin: 15px 15px 40px;
     width: fit-content;
     padding-bottom: 14px;
     position: relative;
 }
-.createCompany h1::before {
+.createAuth h1::before {
     content: "";
     width: 70%;
     background-color: #fff;
@@ -19,7 +19,7 @@
     bottom: 0;
     left: 0;
 }
-.createCompany h1::after {
+.createAuth h1::after {
     content: "";
     width: 25%;
     background-color: var(--dark-color);
@@ -28,49 +28,55 @@
     bottom: 0;
     left: 0;
 }
-.createCompany .wrapper {
+.createAuth .wrapper {
     display: grid;
     gap: 20px;
     grid-template-columns: repeat(auto-fill, minmax(450px, 1fr));
     margin: 0 20px;
 }
-.createCompany .box {
+.createAuth .box {
     background-color: #fff;
     padding: 20px;
     border-radius: 10px;
 }
-.createCompany .box h2 {
+.createAuth .box h2 {
     margin: 0 0 10px;
     font-size: 23px;
     color: var(--dark-color);
 }
-.createCompany .box form {
+.createAuth .box form {
     display: flex;
     flex-direction: column;
     margin-top: 20px;
 }
-.createCompany .box form input {
+.createAuth .box form input,
+.createAuth .box form textarea {
     background-color: #eee;
     border: 2px solid transparent;
     padding: 15px;
     border-radius: 10px;
     margin-bottom: 20px;
 }
-.createCompany .box form input:focus {
+.createAuth .box form textarea {
+    height: 115px;
+    resize: none;
+}
+.createAuth .box form input:focus,
+.createAuth .box form textarea:focus {
     border: 2px solid var(--dark-color);
 }
-.createCompany .box form label {
+.createAuth .box form label {
     font-size: 15px;
     color: var(--gray-color);
     margin: 7px;
 }
-.createCompany .box form select {
+.createAuth .box form select {
     padding: 15px;
     background-color: #eee;
     border-radius: 10px;
     margin-bottom: 20px;
 }
-.createCompany .infoMsg {
+.createAuth .infoMsg {
     background-color: #ffdbe3;
     display: none;
     justify-content: space-between;
@@ -79,14 +85,14 @@
     margin-bottom: 10px;
     border-radius: 6px;
 }
-.createCompany .infoMsg h2 {
+.createAuth .infoMsg h2 {
     color: #cd1532;
     font-size: 15px;
     font-weight: 400;
     text-align: center;
     margin: 0;
 }
-.createCompany .infoMsg div {
+.createAuth .infoMsg div {
     background-color: #cd1532;
     color: #fff;
     width: 25px;
@@ -99,10 +105,10 @@
     justify-content: center;
     align-items: center;
 }
-.createCompany .infoMsg div:hover {
+.createAuth .infoMsg div:hover {
     background-color: #bf1e37;
 }
-.createCompany .box form button {
+.createAuth .box form button {
     display: block;
     width: fit-content;
     padding: 12px 19px;
@@ -115,14 +121,14 @@
     transition: 0.3s;
     border: 1px solid transparent;
 }
-.createCompany .box form button:hover {
+.createAuth .box form button:hover {
     background-color: transparent;
     border: 1px solid #009688;
     color: #009688;
 }
 
 @media (max-width: 767px) {
-    .createCompany .wrapper {
+    .createAuth .wrapper {
         grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
     }
 }

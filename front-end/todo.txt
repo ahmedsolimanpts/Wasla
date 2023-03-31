@@ -1,3 +1,29 @@
--- Add Items In Information 
--- Create Company 
--- Add Company In Company 
+-- Name                     [Create]    [Edit & Delete]
+
+-- Branch                   [Done]          [Done]
+-- Company Branch           [Done]          [Done] 
+-- Branch Phone             [Done]          [Done]
+-- Branch Address           [Done]          [Done]
+-- Branch Location          [Done]          [Done]
+-- Branch Status            [Done]          [Done]
+-- Branch Current Status    [Done]          [Done]
+-- Branch Service Price     [Done]          [Done]
+-- Branch Work Time         [Done]          [Done]
+
+
+
+[Branch] =>
+
+[Company] => Done 
+
+[Auth] => Done
+
+[Information] => Done
+
+
+
+[Scroll Top Button] =>
+[All Auth] => 
+[All Information] =>
+[All Company] =>
+[All Branch] =>

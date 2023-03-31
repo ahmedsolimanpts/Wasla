@@ -18,13 +18,13 @@ function Sidebar() {
           <i className="fa-regular fa-building fa-fw"></i>
           <span>Company</span>
         </NavLink>
-        <NavLink to="/login">
-          <i className="fa-regular fa-chart-bar fa-fw"></i>
-          <span>Test two</span>
+        <NavLink to="/auth">
+          <i className="fa-solid fa-user-lock fa-fw"></i>
+          <span>Auth</span>
         </NavLink>
-        <NavLink to="/login">
-          <i className="fa-regular fa-chart-bar fa-fw"></i>
-          <span>Test three</span>
+        <NavLink to="/branch">
+          <i className="fa-solid fa-code-branch"></i>
+          <span>Branch</span>
         </NavLink>
         <NavLink to="/login">
           <i className="fa-regular fa-chart-bar fa-fw"></i>

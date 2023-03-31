@@ -65,7 +65,9 @@
     color: var(--gray-color);
     margin: 10px;
 }
-.all-items .box .forms-box form input {
+.all-items .box .forms-box form input,
+.all-items .box .forms-box form select, 
+.all-items .box .forms-box form textarea {
     width: 100%;
     margin-bottom: 10px;
     padding: 15px;
@@ -73,7 +75,12 @@
     background-color: #fff;
     border: 1px solid transparent;
 }
-.all-items .box .forms-box form input:focus {
+.all-items .box .forms-box form textarea {
+    height: 115px;
+    resize: none;
+}
+.all-items .box .forms-box form input:focus,
+.all-items .box .forms-box form textarea:focus {
     border: 1px solid var(--dark-color);
 }
 .all-items .box .forms-box form .event-box {

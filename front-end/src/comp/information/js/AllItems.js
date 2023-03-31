@@ -10,6 +10,10 @@ function AllItems() {
   const [countries, setCountry] = useState();
   const [cities, setCity] = useState();
   const [cityDistrict, setCityDistrict] = useState();
+  const [currencies, setCurrencies] = useState();
+  const [phones, setPhones] = useState();
+  const [locations, setLocation] = useState();
+  const [address, setAddress] = useState();
 
   const editLang = (e) => {
     e.preventDefault();
@@ -45,7 +49,7 @@ function AllItems() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           type: e.target.companyType.value,
-          language: e.target.lang.dataset.value,
+          language: e.target.lang.value,
         }),
       }
     );
@@ -73,7 +77,7 @@ function AllItems() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           country: e.target.country.value,
-          language: e.target.lang.dataset.value,
+          language: e.target.lang.value,
         }),
       }
     );
@@ -99,8 +103,8 @@ function AllItems() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           city: e.target.city.value,
-          country: e.target.country.dataset.value,
-          language: e.target.lang.dataset.value,
+          country: e.target.country.value,
+          language: e.target.lang.value,
         }),
       }
     );
@@ -127,8 +131,8 @@ function AllItems() {
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
           district: e.target.district.value,
-          city: e.target.city.dataset.value,
-          language: e.target.lang.dataset.value,
+          city: e.target.city.value,
+          language: e.target.lang.value,
         }),
       }
     );
@@ -146,6 +150,115 @@ function AllItems() {
     window.location.reload();
   };
 
+  const editCurrency = (e) => {
+    e.preventDefault();
+    fetch(
+      process.env.REACT_APP_HOSTNAME +
+        `/api/currency/${e.target.currency.dataset.id}/`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          currency: e.target.currency.value,
+          language: e.target.lang.value,
+        }),
+      }
+    );
+    window.location.reload();
+  };
+
+  const delCurrency = (e) => {
+    fetch(
+      process.env.REACT_APP_HOSTNAME + `/api/currency/${e.target.dataset.id}/`,
+      {
+        method: "DELETE",
+      }
+    );
+    window.location.reload();
+  };
+
+  const editPhone = (e) => {
+    e.preventDefault();
+    fetch(
+      process.env.REACT_APP_HOSTNAME +
+        `/api/phone/${e.target.phone.dataset.id}/`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          phone: e.target.phone.value,
+        }),
+      }
+    );
+    window.location.reload();
+  };
+
+  const delPhone = (e) => {
+    fetch(
+      process.env.REACT_APP_HOSTNAME + `/api/phone/${e.target.dataset.id}/`,
+      {
+        method: "DELETE",
+      }
+    );
+    window.location.reload();
+  };
+
+  const editLocation = (e) => {
+    e.preventDefault();
+    fetch(
+      process.env.REACT_APP_HOSTNAME +
+        `/api/location/${e.target.longitude.dataset.id}/`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          longitude: e.target.longitude.value,
+          latitude: e.target.latitude.value,
+        }),
+      }
+    );
+    window.location.reload();
+  };
+
+  const delLocation = (e) => {
+    fetch(
+      process.env.REACT_APP_HOSTNAME + `/api/location/${e.target.dataset.id}/`,
+      {
+        method: "DELETE",
+      }
+    );
+    window.location.reload();
+  };
+
+  const editAddress = (e) => {
+    e.preventDefault();
+    fetch(
+      process.env.REACT_APP_HOSTNAME +
+        `/api/address/${e.target.street.dataset.id}/`,
+      {
+        method: "PUT",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          district: e.target.district.value,
+          street: e.target.street.value,
+          building_number: e.target.building.value,
+          description: e.target.description.value,
+        }),
+      }
+    );
+    window.location.reload();
+  };
+
+  const delAddress = (e) => {
+    fetch(
+      process.env.REACT_APP_HOSTNAME + `/api/address/${e.target.dataset.id}/`,
+      {
+        method: "DELETE",
+      }
+    );
+    window.location.reload();
+  };
+
   const getLangData = async () => {
     const res = await fetch(
       process.env.REACT_APP_HOSTNAME + "/api/language/"
@@ -155,30 +268,58 @@ function AllItems() {
 
   const getCompanyTypeData = async () => {
     const res = await fetch(
-      process.env.REACT_APP_HOSTNAME + "/api/company-type-full-data/"
+      process.env.REACT_APP_HOSTNAME + "/api/company-type/"
     ).then((res) => res.json());
     setCompanyType(res);
   };
 
   const getCountryData = async () => {
     const res = await fetch(
-      process.env.REACT_APP_HOSTNAME + "/api/country-full-detail/"
+      process.env.REACT_APP_HOSTNAME + "/api/country/"
     ).then((res) => res.json());
     setCountry(res);
   };
 
   const getCityData = async () => {
-    const res = await fetch(
-      process.env.REACT_APP_HOSTNAME + "/api/city-full-detail/"
-    ).then((res) => res.json());
+    const res = await fetch(process.env.REACT_APP_HOSTNAME + "/api/city/").then(
+      (res) => res.json()
+    );
     setCity(res);
   };
 
   const getCityDistrictData = async () => {
     const res = await fetch(
-      process.env.REACT_APP_HOSTNAME + "/api/city-district-full-detail/"
+      process.env.REACT_APP_HOSTNAME + "/api/city-district/"
     ).then((res) => res.json());
     setCityDistrict(res);
+  };
+
+  const getCurrencyData = async () => {
+    const res = await fetch(
+      process.env.REACT_APP_HOSTNAME + "/api/currency/"
+    ).then((res) => res.json());
+    setCurrencies(res);
+  };
+
+  const getPhonesData = async () => {
+    const res = await fetch(
+      process.env.REACT_APP_HOSTNAME + "/api/phone/"
+    ).then((res) => res.json());
+    setPhones(res);
+  };
+
+  const getLocationData = async () => {
+    const res = await fetch(
+      process.env.REACT_APP_HOSTNAME + "/api/location/"
+    ).then((res) => res.json());
+    setLocation(res);
+  };
+
+  const getAddressData = async () => {
+    const res = await fetch(
+      process.env.REACT_APP_HOSTNAME + "/api/address/"
+    ).then((res) => res.json());
+    setAddress(res);
   };
 
   useEffect(() => {
@@ -187,6 +328,10 @@ function AllItems() {
     getCountryData();
     getCityData();
     getCityDistrictData();
+    getCurrencyData();
+    getPhonesData();
+    getLocationData();
+    getAddressData();
   }, []);
 
   return (
@@ -251,12 +396,18 @@ function AllItems() {
                       id="companyType"
                       data-id={comType.id}
                     />
+
                     <label>Language</label>
-                    <input
-                      defaultValue={comType.language.language}
-                      id="lang"
-                      data-value={comType.language.id}
-                    />
+                    <select id="lang" defaultValue={comType.language}>
+                      {langs &&
+                        langs.map((lang) => (
+                          <option key={lang.id} value={lang.id}>
+                            {" "}
+                            {lang.language}{" "}
+                          </option>
+                        ))}
+                    </select>
+
                     <div className="event-box">
                       <button className="update">Update</button>
                       <span
@@ -292,12 +443,18 @@ function AllItems() {
                       id="country"
                       data-id={country.id}
                     />
+
                     <label>Language</label>
-                    <input
-                      defaultValue={country.language.language}
-                      id="lang"
-                      data-value={country.language.id}
-                    />
+                    <select id="lang" defaultValue={country.language}>
+                      {langs &&
+                        langs.map((lang) => (
+                          <option key={lang.id} value={lang.id}>
+                            {" "}
+                            {lang.language}{" "}
+                          </option>
+                        ))}
+                    </select>
+
                     <div className="event-box">
                       <button className="update">Update</button>
                       <span
@@ -333,18 +490,29 @@ function AllItems() {
                       id="city"
                       data-id={city.id}
                     />
+
                     <label>Country</label>
-                    <input
-                      defaultValue={city.country.country}
-                      id="country"
-                      data-value={city.country.id}
-                    />
+                    <select id="country" defaultValue={city.country}>
+                      {countries &&
+                        countries.map((country) => (
+                          <option key={country.id} value={country.id}>
+                            {" "}
+                            {country.country}{" "}
+                          </option>
+                        ))}
+                    </select>
+
                     <label>Language</label>
-                    <input
-                      defaultValue={city.language.language}
-                      id="lang"
-                      data-value={city.language.id}
-                    />
+                    <select id="lang" defaultValue={city.language}>
+                      {langs &&
+                        langs.map((lang) => (
+                          <option key={lang.id} value={lang.id}>
+                            {" "}
+                            {lang.language}{" "}
+                          </option>
+                        ))}
+                    </select>
+
                     <div className="event-box">
                       <button className="update">Update</button>
                       <span
@@ -380,24 +548,216 @@ function AllItems() {
                       id="district"
                       data-id={district.id}
                     />
+
                     <label>City</label>
-                    <input
-                      defaultValue={district.city.city}
-                      id="city"
-                      data-value={district.city.id}
-                    />
+                    <select id="city" defaultValue={district.city}>
+                      {cities &&
+                        cities.map((city) => (
+                          <option key={city.id} value={city.id}>
+                            {" "}
+                            {city.city}{" "}
+                          </option>
+                        ))}
+                    </select>
+
                     <label>Language</label>
-                    <input
-                      defaultValue={district.language.language}
-                      id="lang"
-                      data-value={district.language.id}
-                    />
+                    <select id="lang" defaultValue={district.language}>
+                      {langs &&
+                        langs.map((lang) => (
+                          <option key={lang.id} value={lang.id}>
+                            {" "}
+                            {lang.language}{" "}
+                          </option>
+                        ))}
+                    </select>
+
                     <div className="event-box">
                       <button className="update">Update</button>
                       <span
                         className="delete"
                         data-id={district.id}
                         onClick={delCityDistrict}
+                      >
+                        Delete
+                      </span>
+                    </div>
+                  </form>
+                ))}
+            </div>
+          </div>
+
+          <div className="box">
+            <h2
+              onClick={() => {
+                document
+                  .querySelector(".all-items .box-six")
+                  .classList.toggle("open");
+              }}
+            >
+              Currency<i className="fa-regular fa-circle-down"></i>
+            </h2>
+            <div className="forms-box box-six">
+              {currencies &&
+                currencies.map((currency) => (
+                  <form key={currency.id} onSubmit={editCurrency}>
+                    <label>Currency</label>
+                    <input
+                      defaultValue={currency.currency}
+                      id="currency"
+                      data-id={currency.id}
+                    />
+
+                    <label>Language</label>
+                    <select id="lang" defaultValue={currency.language}>
+                      {langs &&
+                        langs.map((lang) => (
+                          <option key={lang.id} value={lang.id}>
+                            {" "}
+                            {lang.language}{" "}
+                          </option>
+                        ))}
+                    </select>
+
+                    <div className="event-box">
+                      <button className="update">Update</button>
+                      <span
+                        className="delete"
+                        data-id={currency.id}
+                        onClick={delCurrency}
+                      >
+                        Delete
+                      </span>
+                    </div>
+                  </form>
+                ))}
+            </div>
+          </div>
+
+          <div className="box">
+            <h2
+              onClick={() => {
+                document
+                  .querySelector(".all-items .box-seven")
+                  .classList.toggle("open");
+              }}
+            >
+              Phone<i className="fa-regular fa-circle-down"></i>
+            </h2>
+            <div className="forms-box box-seven">
+              {phones &&
+                phones.map((phone) => (
+                  <form key={phone.id} onSubmit={editPhone}>
+                    <label>Phone</label>
+                    <input
+                      defaultValue={phone.phone}
+                      id="phone"
+                      data-id={phone.id}
+                    />
+
+                    <div className="event-box">
+                      <button className="update">Update</button>
+                      <span
+                        className="delete"
+                        data-id={phone.id}
+                        onClick={delPhone}
+                      >
+                        Delete
+                      </span>
+                    </div>
+                  </form>
+                ))}
+            </div>
+          </div>
+
+          <div className="box">
+            <h2
+              onClick={() => {
+                document
+                  .querySelector(".all-items .box-eight")
+                  .classList.toggle("open");
+              }}
+            >
+              Location<i className="fa-regular fa-circle-down"></i>
+            </h2>
+            <div className="forms-box box-eight">
+              {locations &&
+                locations.map((location) => (
+                  <form key={location.id} onSubmit={editLocation}>
+                    <label>Longitude</label>
+                    <input
+                      defaultValue={location.longitude}
+                      id="longitude"
+                      data-id={location.id}
+                    />
+
+                    <label>Latitude</label>
+                    <input defaultValue={location.latitude} id="latitude" />
+
+                    <div className="event-box">
+                      <button className="update">Update</button>
+                      <span
+                        className="delete"
+                        data-id={location.id}
+                        onClick={delLocation}
+                      >
+                        Delete
+                      </span>
+                    </div>
+                  </form>
+                ))}
+            </div>
+          </div>
+
+          <div className="box">
+            <h2
+              onClick={() => {
+                document
+                  .querySelector(".all-items .box-nine")
+                  .classList.toggle("open");
+              }}
+            >
+              Address<i className="fa-regular fa-circle-down"></i>
+            </h2>
+            <div className="forms-box box-nine">
+              {address &&
+                address.map((address) => (
+                  <form key={address.id} onSubmit={editAddress}>
+                    <label>District</label>
+                    <select id="district" defaultValue={address.district}>
+                      {cityDistrict &&
+                        cityDistrict.map((district) => (
+                          <option key={district.id} value={district.id}>
+                            {" "}
+                            {district.district}{" "}
+                          </option>
+                        ))}
+                    </select>
+
+                    <label>Street</label>
+                    <input
+                      defaultValue={address.street}
+                      id="street"
+                      data-id={address.id}
+                    />
+
+                    <label>Building Number</label>
+                    <input
+                      defaultValue={address.building_number}
+                      id="building"
+                    />
+
+                    <label>Description</label>
+                    <textarea
+                      defaultValue={address.description}
+                      id="description"
+                    ></textarea>
+
+                    <div className="event-box">
+                      <button className="update">Update</button>
+                      <span
+                        className="delete"
+                        data-id={address.id}
+                        onClick={delAddress}
                       >
                         Delete
                       </span>

@@ -1,6 +1,25 @@
 Website Url:
 - https://big-pizza.onrender.com/
 
+- localhost/api/company-type/
+        methods : GET / POST
+        description:
+            - GET All Company Types OR add new One
+        Request-Body for POST OR:
+                {
+                    "type": STRING, # REQUIERD
+                    "language": PRIMARYKEY, # REQUIERD FOR TABEL NAME "language"
+                }
+
+- localhost/company-type/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Company Type By id OR update by ID  OR Delete company Type
+        Request-Body FOR UPDATE:
+                {
+                    "type": STRING, # REQUIERD
+                    "language":PRIMARY_KEY, # REQUIERD FOR TABEL NAME "language"
+                }
 
 - localhost/api/company/
         methods : GET /POST
@@ -103,4 +122,50 @@ Website Url:
                 {
                     "company": FOREGIN_KEY, # REQUIERD  FOR TABEL NAME "Company"
                     "qr_code": FOREGIN_KEY, # REQUIERD FOR TABEL NAME "QrCode"
+                }
+
+ - localhost/api/company-prcode/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Company prcode by ID OR UPDATE Company prcode OR DELETE
+        Request-Body For PUT:
+                {
+                    "company": FOREGIN_KEY, # REQUIERD  FOR TABEL NAME "Company"
+                    "qr_code": FOREGIN_KEY, # REQUIERD FOR TABEL NAME "QrCode"
+
+                }
+
+  - localhost/api/company-type-full-data/
+        methods : GET
+        description:
+            - GET ALL Company Type With all related Data
+        Response-Body Example:
+                {
+                "id": 3,
+                "language": {
+                    "id": 2,
+                    "language": "en"
+                },
+                "type": "Drink"
+                }
+
+   - localhost/api/company-full-data/
+        methods : GET
+        description:
+            - GET ALL Company With all related Data
+        Response-Body Example:
+                 {
+                    "id": 3,
+                    "companytype": {
+                        "id": 3,
+                        "type": "Drink",
+                        "language": 2
+                    },
+                    "manager": {
+                        "id": 1,
+                        "email": "five@gmail.com"
+                    },
+                    "name": "HartAttack",
+                    "verbose_name": "hat",
+                    "create_at": "2023-03-26T23:17:00.891000Z"
                 }

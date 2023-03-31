@@ -1,0 +1,38 @@
+.auth {
+    min-height: calc(100vh - 57px);
+    background-color: var(--section-color);
+    padding: 50px 0;
+}
+.auth .auth-box {
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    flex-wrap: wrap;
+}
+.auth .auth-box a {
+    width: 300px;
+    height: 150px;
+    background-color: var(--dark-color);
+    color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid transparent;
+    transition: 0.3s;
+}
+.auth .auth-box a:hover {
+    border: 1px solid var(--dark-color);
+    color: var(--dark-color);
+    background-color: transparent;
+}
+.auth .auth-box a svg {
+    font-size: 40px;
+}
+.auth .auth-box a span {
+    display: block;
+    margin: 15px 0 0;
+    font-weight: bold;
+}

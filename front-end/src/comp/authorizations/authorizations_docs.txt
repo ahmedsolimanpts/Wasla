@@ -1,0 +1,163 @@
+Website Url:
+- https://big-pizza.onrender.com/
+
+- localhost/api/feature/
+        methods : GET / POST
+        description:
+            - GET All Feature Types OR add new One
+        Request-Body for POST OR:
+                {
+                    "feature": STRING, # REQUIERD
+                    "language": FORIEGNKEY, # REQUIERD FOR TABEL NAME "language"
+                    "description": TEXT, #OPTIONAL
+                }
+
+- localhost/feature/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET feature By id OR update by ID  OR Delete company Type
+        Request-Body FOR UPDATE:
+                {
+                    "feature": STRING, # REQUIERD
+                    "language": FORIEGNKEY, # REQUIERD FOR TABEL NAME "language"
+                    "description": TEXT, #OPTIONAL
+                }
+
+- localhost/api/branch-feature/
+        methods : GET / POST
+        description:
+            - GET All Branch Feature Types OR add new One
+        Request-Body for POST OR:
+                {
+                    "feature": FORIEGNKEY, # REQUIERD
+                    "comapny_branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "Company Branch"
+                    "start_date": DATE, #REQUIERD
+                    "end_date": DATE, #REQUIERD
+                }
+
+- localhost/branch-feature/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Branch feature By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "feature": FORIEGNKEY, # REQUIERD
+                    "company_branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "Company Branch"
+                    "start_date": DATE, #REQUIERD
+                    "end_date": DATE, #REQUIERD
+                }
+
+
+
+- localhost/api/perivilages/
+        methods : GET / POST
+        description:
+            - GET All Perivilages Types OR add new One
+        Request-Body for POST OR:
+                {
+                    "perivilage": STRING, # REQUIERD
+                    "language": FORIEGNKEY, # REQUIERD FOR TABEL NAME "language"
+                    "description": TEST, #OPTIONAL
+                }
+
+- localhost/perivilages/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Perivilages By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "perivilage": STRING, # REQUIERD
+                    "language": FORIEGNKEY, # REQUIERD FOR TABEL NAME "language"
+                    "description": TEST, #OPTIONAL
+                }
+
+
+- localhost/api/company-liciens/
+        methods : GET / POST
+        description:
+            - GET All company liciens Types OR add new One
+        Request-Body for POST OR:
+                {
+                    "company": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company"
+                    "start_date": DATE, #REQUIERD
+                    "end_date": DATE, #REQUIERD
+                }
+
+- localhost/company-liciens/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Company Liciens By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "company": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company"
+                    "start_date": DATE, #REQUIERD
+                    "end_date": DATE, #REQUIERD
+                }
+
+
+
+- localhost/api/company-perivilages/
+        methods : GET / POST
+        description:
+            - GET All Company Perivilages Types OR add new One
+        Request-Body for POST OR:
+                {
+                    "user": FORIEGNKEY, # REQUIERD FOR TABEL NAME "user"
+                    "company_branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company branch"
+                    "privilages": FORIEGNKEY, # REQUIERD FOR TABEL NAME "privilages"
+                }
+
+- localhost/company-perivilages/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Company Perivilages By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "user": FORIEGNKEY, # REQUIERD FOR TABEL NAME "user"
+                    "company_branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company branch"
+                    "privilages": FORIEGNKEY, # REQUIERD FOR TABEL NAME "privilages"
+                }
+
+
+
+
+- localhost/api/services/
+        methods : GET / POST
+        description:
+            - GET All Services Types OR add new One
+        Request-Body for POST OR:
+                {
+                    "service": STRING, # REQUIERD
+                    "language": FORIEGNKEY, # REQUIERD FOR TABEL NAME "language"
+                }
+
+- localhost/services/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Services By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "service": STRING, # REQUIERD
+                    "language": FORIEGNKEY, # REQUIERD FOR TABEL NAME "language"
+                }
+
+
+- localhost/api/company-services/
+        methods : GET / POST
+        description:
+            - GET All Company Services Types OR add new One
+        Request-Body for POST OR:
+                {
+                    "service": FORIEGNKEY, # REQUIERD FOR TABEL NAME "services"
+                    "company": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company"
+                }
+
+- localhost/company-services/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Company Services By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "service": FORIEGNKEY, # REQUIERD FOR TABEL NAME "services"
+                    "company": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company"
+                }
