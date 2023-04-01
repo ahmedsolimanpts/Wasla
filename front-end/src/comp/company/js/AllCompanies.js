@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import NavLog from "../../global/js/NavLog";
 import Sidebar from "../../global/js/Sidebar";
 import Footer from "../../global/js/Footer";
@@ -30,7 +30,6 @@ function AllCompanies() {
         }),
       }
     );
-    window.location.reload();
   };
 
   const delCompany = (e) => {
@@ -39,8 +38,12 @@ function AllCompanies() {
       {
         method: "DELETE",
       }
-    );
-    window.location.reload();
+    ).then((res) => {
+      if (res.status === 204) {
+        getCompanyData();
+        getCompanyTypeData();
+      }
+    });
   };
 
   const editCompanyPhone = (e) => {
@@ -57,7 +60,6 @@ function AllCompanies() {
         }),
       }
     );
-    window.location.reload();
   };
 
   const delCompanyPhone = (e) => {
@@ -67,8 +69,13 @@ function AllCompanies() {
       {
         method: "DELETE",
       }
-    );
-    window.location.reload();
+    ).then((res) => {
+      if (res.status === 204) {
+        getCompanyData();
+        getCompanyPhoneData();
+        getPhoneData();
+      }
+    });
   };
 
   const editCompanyAddress = (e) => {
@@ -85,7 +92,6 @@ function AllCompanies() {
         }),
       }
     );
-    window.location.reload();
   };
 
   const delCompanyAddress = (e) => {
@@ -95,8 +101,13 @@ function AllCompanies() {
       {
         method: "DELETE",
       }
-    );
-    window.location.reload();
+    ).then((res) => {
+      if (res.status === 204) {
+        getCompanyData();
+        getCompanyAddressData();
+        getAddressData();
+      }
+    });
   };
 
   const editCompanyLocation = (e) => {
@@ -113,7 +124,6 @@ function AllCompanies() {
         }),
       }
     );
-    window.location.reload();
   };
 
   const delCompanyLocation = (e) => {
@@ -123,8 +133,13 @@ function AllCompanies() {
       {
         method: "DELETE",
       }
-    );
-    window.location.reload();
+    ).then((res) => {
+      if (res.status === 204) {
+        getCompanyData();
+        getCompanyLocationData();
+        getLocationData();
+      }
+    });
   };
 
   const getCompanyData = async () => {
@@ -183,17 +198,6 @@ function AllCompanies() {
     setLocation(res);
   };
 
-  useEffect(() => {
-    getCompanyData();
-    getCompanyTypeData();
-    getCompanyPhoneData();
-    getPhoneData();
-    getCompanyAddressData();
-    getAddressData();
-    getCompanyLocationData();
-    getLocationData();
-  }, []);
-
   return (
     <>
       <NavLog />
@@ -205,6 +209,8 @@ function AllCompanies() {
             <h2
               onClick={() => {
                 document.querySelector(".box-one").classList.toggle("open");
+                getCompanyData();
+                getCompanyTypeData();
               }}
             >
               Company<i className="fa-regular fa-circle-down"></i>
@@ -259,6 +265,9 @@ function AllCompanies() {
             <h2
               onClick={() => {
                 document.querySelector(".box-two").classList.toggle("open");
+                getCompanyData();
+                getCompanyPhoneData();
+                getPhoneData();
               }}
             >
               Company Phone <i className="fa-regular fa-circle-down"></i>
@@ -317,6 +326,9 @@ function AllCompanies() {
             <h2
               onClick={() => {
                 document.querySelector(".box-three").classList.toggle("open");
+                getCompanyData();
+                getCompanyAddressData();
+                getAddressData();
               }}
             >
               Company Address <i className="fa-regular fa-circle-down"></i>
@@ -375,6 +387,9 @@ function AllCompanies() {
             <h2
               onClick={() => {
                 document.querySelector(".box-four").classList.toggle("open");
+                getCompanyData();
+                getCompanyLocationData();
+                getLocationData();
               }}
             >
               Company Location <i className="fa-regular fa-circle-down"></i>

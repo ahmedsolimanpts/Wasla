@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import NavLog from "../../global/js/NavLog";
 import Sidebar from "../../global/js/Sidebar";
 import Footer from "../../global/js/Footer";
@@ -26,7 +26,6 @@ function AllItems() {
         body: JSON.stringify({ language: e.target.lang.value }),
       }
     );
-    window.location.reload();
   };
 
   const delLang = (e) => {
@@ -53,7 +52,6 @@ function AllItems() {
         }),
       }
     );
-    window.location.reload();
   };
 
   const delCompanyType = (e) => {
@@ -81,7 +79,6 @@ function AllItems() {
         }),
       }
     );
-    window.location.reload();
   };
 
   const delCountry = (e) => {
@@ -108,7 +105,6 @@ function AllItems() {
         }),
       }
     );
-    window.location.reload();
   };
 
   const delCity = (e) => {
@@ -136,7 +132,6 @@ function AllItems() {
         }),
       }
     );
-    window.location.reload();
   };
 
   const delCityDistrict = (e) => {
@@ -164,7 +159,6 @@ function AllItems() {
         }),
       }
     );
-    window.location.reload();
   };
 
   const delCurrency = (e) => {
@@ -190,7 +184,6 @@ function AllItems() {
         }),
       }
     );
-    window.location.reload();
   };
 
   const delPhone = (e) => {
@@ -217,7 +210,6 @@ function AllItems() {
         }),
       }
     );
-    window.location.reload();
   };
 
   const delLocation = (e) => {
@@ -246,7 +238,6 @@ function AllItems() {
         }),
       }
     );
-    window.location.reload();
   };
 
   const delAddress = (e) => {
@@ -322,18 +313,6 @@ function AllItems() {
     setAddress(res);
   };
 
-  useEffect(() => {
-    getLangData();
-    getCompanyTypeData();
-    getCountryData();
-    getCityData();
-    getCityDistrictData();
-    getCurrencyData();
-    getPhonesData();
-    getLocationData();
-    getAddressData();
-  }, []);
-
   return (
     <>
       <NavLog />
@@ -347,6 +326,7 @@ function AllItems() {
                 document
                   .querySelector(".all-items .box-one")
                   .classList.toggle("open");
+                getLangData();
               }}
             >
               Language<i className="fa-regular fa-circle-down"></i>
@@ -382,6 +362,8 @@ function AllItems() {
                 document
                   .querySelector(".all-items .box-two")
                   .classList.toggle("open");
+                getLangData();
+                getCompanyTypeData();
               }}
             >
               Company Type<i className="fa-regular fa-circle-down"></i>
@@ -429,6 +411,8 @@ function AllItems() {
                 document
                   .querySelector(".all-items .box-three")
                   .classList.toggle("open");
+                getLangData();
+                getCountryData();
               }}
             >
               Country<i className="fa-regular fa-circle-down"></i>
@@ -476,6 +460,9 @@ function AllItems() {
                 document
                   .querySelector(".all-items .box-four")
                   .classList.toggle("open");
+                getLangData();
+                getCountryData();
+                getCityData();
               }}
             >
               City<i className="fa-regular fa-circle-down"></i>
@@ -534,6 +521,9 @@ function AllItems() {
                 document
                   .querySelector(".all-items .box-five")
                   .classList.toggle("open");
+                getLangData();
+                getCityData();
+                getCityDistrictData();
               }}
             >
               City District<i className="fa-regular fa-circle-down"></i>
@@ -592,6 +582,8 @@ function AllItems() {
                 document
                   .querySelector(".all-items .box-six")
                   .classList.toggle("open");
+                getLangData();
+                getCurrencyData();
               }}
             >
               Currency<i className="fa-regular fa-circle-down"></i>
@@ -639,6 +631,7 @@ function AllItems() {
                 document
                   .querySelector(".all-items .box-seven")
                   .classList.toggle("open");
+                getPhonesData();
               }}
             >
               Phone<i className="fa-regular fa-circle-down"></i>
@@ -675,6 +668,7 @@ function AllItems() {
                 document
                   .querySelector(".all-items .box-eight")
                   .classList.toggle("open");
+                getLocationData();
               }}
             >
               Location<i className="fa-regular fa-circle-down"></i>
@@ -714,6 +708,8 @@ function AllItems() {
                 document
                   .querySelector(".all-items .box-nine")
                   .classList.toggle("open");
+                getCityDistrictData();
+                getAddressData();
               }}
             >
               Address<i className="fa-regular fa-circle-down"></i>

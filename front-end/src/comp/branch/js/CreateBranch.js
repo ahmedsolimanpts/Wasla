@@ -32,7 +32,11 @@ function CreateBranch() {
           document.querySelector(".addBranch .infoMsg").style.cssText =
             "display: flex;";
         } else {
-          window.location.reload();
+          document.querySelector(".addBranch .infoMsg").style.cssText =
+            "display: flex;";
+          document.querySelector(".addBranch .infoMsg h2").textContent =
+            "Created Good";
+          getBranchData();
           e.target.name.value = "";
           e.target.verbose.value = "";
           e.target.manager.value = "";
@@ -58,7 +62,9 @@ function CreateBranch() {
           document.querySelector(".addCompanyBranch .infoMsg").style.cssText =
             "display: flex;";
         } else {
-          window.location.reload();
+          getCompanyData();
+          getBranchData();
+          getCompanyBranchData();
           e.target.verbose.value = "";
         }
       });
@@ -81,7 +87,8 @@ function CreateBranch() {
           document.querySelector(".addPhone .infoMsg").style.cssText =
             "display: flex;";
         } else {
-          window.location.reload();
+          getBranchData();
+          getPhoneData();
         }
       });
   };
@@ -103,7 +110,8 @@ function CreateBranch() {
           document.querySelector(".addAddress .infoMsg").style.cssText =
             "display: flex;";
         } else {
-          window.location.reload();
+          getBranchData();
+          getAddressData();
         }
       });
   };
@@ -127,7 +135,8 @@ function CreateBranch() {
           document.querySelector(".addLocation .infoMsg").style.cssText =
             "display: flex;";
         } else {
-          window.location.reload();
+          getCompanyBranchData();
+          getLocationData();
         }
       });
   };
@@ -149,7 +158,8 @@ function CreateBranch() {
           document.querySelector(".addStatus .infoMsg").style.cssText =
             "display: flex;";
         } else {
-          window.location.reload();
+          getLangData();
+          getStatusData();
           e.target.status.value = "";
         }
       });
@@ -175,7 +185,8 @@ function CreateBranch() {
           document.querySelector(".addCurrentStatus .infoMsg").style.cssText =
             "display: flex;";
         } else {
-          window.location.reload();
+          getCompanyBranchData();
+          getStatusData();
         }
       });
   };
@@ -200,7 +211,7 @@ function CreateBranch() {
           document.querySelector(".addServicePrice .infoMsg").style.cssText =
             "display: flex;";
         } else {
-          window.location.reload();
+          getCompanyBranchData();
           e.target.servicePrice.value = "";
         }
       });
@@ -226,7 +237,7 @@ function CreateBranch() {
           document.querySelector(".addWorkTime .infoMsg").style.cssText =
             "display: flex;";
         } else {
-          window.location.reload();
+          getCompanyBranchData();
           e.target.openAt.value = "";
           e.target.closeAt.value = "";
         }

@@ -27,3 +27,17 @@
 [All Information] =>
 [All Company] =>
 [All Branch] =>
+
+
+[Company] => Done
+[Branch] => Done
+[Auth] =>
+[Information] =>
+
+
+Del => 
+.then((res) => {
+      if (res.status === 204) {
+        Test();
+      }
+    })

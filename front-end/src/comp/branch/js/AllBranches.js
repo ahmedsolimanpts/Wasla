@@ -43,8 +43,11 @@ function AllBranches() {
       {
         method: "DELETE",
       }
-    );
-    window.location.reload();
+    ).then((res) => {
+      if (res.status === 204) {
+        getBranchData();
+      }
+    });
   };
 
   const editCompanyBranch = (e) => {
@@ -71,8 +74,13 @@ function AllBranches() {
       {
         method: "DELETE",
       }
-    );
-    window.location.reload();
+    ).then((res) => {
+      if (res.status === 204) {
+        getCompanyBranchData();
+        getBranchData();
+        getCompanyData();
+      }
+    });
   };
 
   const editBranchPhone = (e) => {
@@ -98,8 +106,13 @@ function AllBranches() {
       {
         method: "DELETE",
       }
-    );
-    window.location.reload();
+    ).then((res) => {
+      if (res.status === 204) {
+        getBranchPhoneData();
+        getBranchData();
+        getPhoneData();
+      }
+    });
   };
 
   const editBranchAddress = (e) => {
@@ -125,8 +138,13 @@ function AllBranches() {
       {
         method: "DELETE",
       }
-    );
-    window.location.reload();
+    ).then((res) => {
+      if (res.status === 204) {
+        getBranchAddressData();
+        getBranchData();
+        getAddressData();
+      }
+    });
   };
 
   const editBranchLocation = (e) => {
@@ -152,8 +170,13 @@ function AllBranches() {
       {
         method: "DELETE",
       }
-    );
-    window.location.reload();
+    ).then((res) => {
+      if (res.status === 204) {
+        getBranchLocationData();
+        getCompanyBranchData();
+        getLocationData();
+      }
+    });
   };
 
   const editBranchStatus = (e) => {
@@ -179,8 +202,12 @@ function AllBranches() {
       {
         method: "DELETE",
       }
-    );
-    window.location.reload();
+    ).then((res) => {
+      if (res.status === 204) {
+        getBranchStatusData();
+        getLangData();
+      }
+    });
   };
 
   const editBranchCurrentStatus = (e) => {
@@ -206,8 +233,13 @@ function AllBranches() {
       {
         method: "DELETE",
       }
-    );
-    window.location.reload();
+    ).then((res) => {
+      if (res.status === 204) {
+        getBranchCurrentStatusData();
+        getBranchStatusData();
+        getCompanyBranchData();
+      }
+    });
   };
 
   const editBranchServicePrice = (e) => {
@@ -233,8 +265,12 @@ function AllBranches() {
       {
         method: "DELETE",
       }
-    );
-    window.location.reload();
+    ).then((res) => {
+      if (res.status === 204) {
+        getBranchServicePriceData();
+        getCompanyBranchData();
+      }
+    });
   };
 
   const editBranchWorkTime = (e) => {
@@ -261,8 +297,12 @@ function AllBranches() {
       {
         method: "DELETE",
       }
-    );
-    window.location.reload();
+    ).then((res) => {
+      if (res.status === 204) {
+        getBranchWorkTimeData();
+        getCompanyBranchData();
+      }
+    });
   };
 
   const getBranchData = async () => {

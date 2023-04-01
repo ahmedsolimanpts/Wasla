@@ -30,7 +30,8 @@ function CreateCompany() {
           document.querySelector(".addCompany .infoMsg").style.cssText =
             "display: flex;";
         } else {
-          window.location.reload();
+          getCompanyData();
+          getTypeData();
           e.target.name.value = "";
           e.target.verbose.value = "";
           e.target.manager.value = "";
@@ -55,7 +56,8 @@ function CreateCompany() {
           document.querySelector(".addPhone .infoMsg").style.cssText =
             "display: flex;";
         } else {
-          window.location.reload();
+          getCompanyData();
+          getPhoneData();
         }
       });
   };
@@ -77,7 +79,8 @@ function CreateCompany() {
           document.querySelector(".addAddress .infoMsg").style.cssText =
             "display: flex;";
         } else {
-          window.location.reload();
+          getCompanyData();
+          getAddressData();
         }
       });
   };
@@ -99,7 +102,8 @@ function CreateCompany() {
           document.querySelector(".addLocation .infoMsg").style.cssText =
             "display: flex;";
         } else {
-          window.location.reload();
+          getCompanyData();
+          getLocationData();
         }
       });
   };
