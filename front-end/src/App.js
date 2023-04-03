@@ -17,7 +17,6 @@ import Loading from "./comp/global/js/Loading";
 import Branch from "./comp/branch/js/Branch";
 import CreateBranch from "./comp/branch/js/CreateBranch";
 import AllBranches from "./comp/branch/js/AllBranches";
-import HomeUser from "./comp/home/js/HomeUser";
 
 function App() {
   document.onreadystatechange = function () {
@@ -42,17 +41,6 @@ function App() {
                   <Navigate replace to={"/admin"} />
                 ) : (
                   <Home />
-                )
-              }
-            />
-
-            <Route
-              path="/home"
-              element={
-                window.localStorage.getItem("token") ? (
-                  <HomeUser />
-                ) : (
-                  <Navigate replace to={"/"} />
                 )
               }
             />
