@@ -34,6 +34,8 @@
 [Auth] =>
 [Information] =>
 
+get new Design
+
 
 Del => 
 .then((res) => {
