@@ -1,0 +1,460 @@
+Website Url:
+- https://big-pizza.onrender.com/
+
+- localhost/api/branch/
+        methods : GET / POST
+        description:
+            - GET All Branch OR add new One
+        Request-Body for POST OR:
+                {
+                    "name": STRING, # REQUIERD
+                    "verbose_name": STRING, # REQUIERD
+                    "manager": FORIEGNKEY, # REQUIERD FOR TABEL NAME "user"
+                }
+
+- localhost/api/branch/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET feature By id OR update by ID  OR Delete company Type
+        Request-Body FOR UPDATE:
+                {
+                    "name": STRING, # REQUIERD
+                    "verbose_name": STRING, # REQUIERD
+                    "manager": FORIEGNKEY, # REQUIERD FOR TABEL NAME "user"
+                }
+
+- localhost/api/company-branch/
+        methods : GET / POST
+        description:
+            - GET All Company Branch OR add new One
+        Request-Body for POST OR:
+                {
+                    "verbose_name": STRING, # REQUIERD
+                    "branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "branch"
+                    "company": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company"
+                }
+
+- localhost/api/company-branch/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Company Branch  By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "name": STRING, # REQUIERD
+                    "verbose_name": STRING, # REQUIERD
+                    "manager": FORIEGNKEY, # REQUIERD FOR TABEL NAME "user"
+                    "company": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company"
+                }
+
+
+- localhost/api/branch-phone/
+        methods : GET / POST
+        description:
+            - GET All Branch Phone OR add new One
+        Request-Body for POST OR:
+                {
+                    "verbose_name": STRING, # REQUIERD
+                    "phone": FORIEGNKEY, # REQUIERD FOR TABEL NAME "phone"
+                    "branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "branch"
+                }
+
+- localhost/api/branch-phone/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Branch Phone By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "phone": FORIEGNKEY, # REQUIERD FOR TABEL NAME "phone"
+                    "branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "branch"
+                }
+
+
+- localhost/api/branch-address/
+        methods : GET / POST
+        description:
+            - GET All Branch address OR add new One
+        Request-Body for POST OR:
+                {
+                    "address": FORIEGNKEY, # REQUIERD FOR TABEL NAME "address"
+                    "branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "branch"
+                }
+
+- localhost/api/branch-address/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Branch address By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "address": FORIEGNKEY, # REQUIERD FOR TABEL NAME "address"
+                    "branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "branch"
+                }
+
+
+- localhost/api/branch-location/
+        methods : GET / POST
+        description:
+            - GET All Branch location OR add new One
+        Request-Body for POST OR:
+                {
+                    "company_branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company_branch"
+                    "location": FORIEGNKEY, # REQUIERD FOR TABEL NAME "location"
+                }
+
+- localhost/api/branch-location/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Branch location By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "company_branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company_branch"
+                    "location": FORIEGNKEY, # REQUIERD FOR TABEL NAME "location"
+                }
+
+
+- localhost/api/branch-status/
+        methods : GET / POST
+        description:
+            - GET All Branch status OR add new One
+        Request-Body for POST OR:
+                {
+                    "status": STRING, # REQUIERD
+                    "language": FORIEGNKEY, # REQUIERD FOR TABEL NAME "language"
+                }
+
+- localhost/api/branch-status/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Branch status By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "status": STRING, # REQUIERD
+                    "language": FORIEGNKEY, # REQUIERD FOR TABEL NAME "language"
+                }
+
+
+
+- localhost/api/branch-current-status/
+        methods : GET / POST
+        description:
+            - GET All Branch status OR add new One
+        Request-Body for POST OR:
+                {
+                    "status": FORIEGNKEY, # REQUIERD FOR TABEL NAME "status"
+                    "company_branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company_branch"
+                }
+
+- localhost/api/branch-current-status/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Branch status By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "status": FORIEGNKEY, # REQUIERD FOR TABEL NAME "status"
+                    "company_branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company_branch"
+                }
+
+
+
+- localhost/api/branch-qrcode/
+        methods : GET / POST
+        description:
+            - GET All Branch qrcode OR add new One
+        Request-Body for POST OR:
+                {
+                    "qrcode": FORIEGNKEY, # REQUIERD FOR TABEL NAME "qrcode"
+                    "branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "branch"
+                }
+
+- localhost/api/branch-qrcode/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Branch qrcode By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "qrcode": FORIEGNKEY, # REQUIERD FOR TABEL NAME "qrcode"
+                    "branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "branch"
+                }
+
+
+
+- localhost/api/branch-service-price/
+        methods : GET / POST
+        description:
+            - GET All Branch service price OR add new One
+        Request-Body for POST OR:
+                {
+                    "company_branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company_branch"
+                    "service_price": DECIMAL, # REQUIERD
+                }
+
+- localhost/api/branch-service-price/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Branch service price By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "company_branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company_branch"
+                    "service_price": DECIMAL, # REQUIERD
+                }
+
+
+
+- localhost/api/branch-work-time/
+        methods : GET / POST
+        description:
+            - GET All Branch Work Time OR add new One
+        Request-Body for POST OR:
+                {
+                    "company_branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company_branch"
+                    "open_at": TIME, # REQUIERD
+                    "close_at": TIME, # REQUIERD
+                }
+
+- localhost/api/branch-work-time/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Branch Work Time By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "company_branch": FORIEGNKEY, # REQUIERD FOR TABEL NAME "company_branch"
+                    "open_at": TIME, # REQUIERD
+                    "close_at": TIME, # REQUIERD
+                }
+
+
+- localhost/api/branch-full-data/
+        methods : GET
+        description:
+            - GET  Branch Full Data By
+        Response-Body For EXAMPLE:
+                {
+                    "id": 1,
+                    "manager": {
+                        "id": 1,
+                        "email": "five@gmail.com"
+                    },
+                    "name": "liwa two",
+                    "verbose_name": "liw",
+                    "create_at": "2023-03-29T04:39:00Z"
+                }
+
+
+
+- localhost/api/company-branch-full-data/
+        methods : GET
+        description:
+            - GET Company Branch Full Data
+        Response-Body For EXAMPLE:
+                {
+                    "id": 1,
+                    "company": {
+                        "id": 1,
+                        "name": "Liwa",
+                        "verbose_name": "liw",
+                        "create_at": "2023-03-29T20:10:58.858000Z",
+                        "companytype": 1,
+                        "manager": 1
+                    },
+                    "branch": {
+                        "id": 1,
+                        "manager": {
+                            "id": 1,
+                            "email": "five@gmail.com"
+                        },
+                        "name": "Liwa Branch",
+                        "verbose_name": "liw",
+                        "create_at": "2023-03-29T20:14:24.207000Z"
+                    },
+                    "verbose_name": "liw"
+
+                }
+
+
+- localhost/api/branch-phone-full-data/
+        methods : GET
+        description:
+            - GET Branch Phone Full Data
+        Response-Body For EXAMPLE:
+                {
+                    "id": 1,
+                    "branch": {
+                        "id": 1,
+                        "manager": {
+                            "id": 1,
+                            "email": "five@gmail.com"
+                        },
+                        "name": "Liwa Branch",
+                        "verbose_name": "liw",
+                        "create_at": "2023-03-29T20:14:24.207000Z"
+                    },
+                    "phone": {
+                        "id": 1,
+                        "phone": "01015044531"
+                    }
+                }
+
+- localhost/api/branch-address-full-data/
+        methods : GET
+        description:
+            - GET Branch Address Full Data
+        Response-Body For EXAMPLE:
+                {
+                    "id": 1,
+                    "branch": {
+                        "id": 1,
+                        "manager": {
+                            "id": 1,
+                            "email": "five@gmail.com"
+                        },
+                        "name": "Liwa Branch",
+                        "verbose_name": "liw",
+                        "create_at": "2023-03-29T20:14:24.207000Z"
+                    },
+                    "address": {
+                        "id": 1,
+                        "district": {
+                            "id": 1,
+                            "language": {
+                                "id": 1,
+                                "language": "en"
+                            },
+                            "city": {
+                                "id": 1,
+                                "city": "Cairo",
+                                "language": 2,
+                                "country": 1
+                            },
+                            "district": "Blot"
+                        },
+                        "street": "new twsese",
+                        "building_number": "115",
+                        "description": ""
+                    }
+
+                }
+
+
+- localhost/api/branch-status-full-data/
+        methods : GET
+        description:
+            - GET Branch Status Full Data
+        Response-Body For EXAMPLE:
+                {
+                    "id": 1,
+                    "language": {
+                        "id": 1,
+                        "language": "en"
+                    },
+                    "status": "Done"
+                }
+
+
+- localhost/api/branch-work-time-full-data/
+        methods : GET
+        description:
+            - GET Branch Work Time Full Data
+        Response-Body For EXAMPLE:
+                {
+                    "id": 1,
+                    "company_branch": {
+                        "id": 1,
+                        "company": {
+                            "id": 1,
+                            "name": "Liwa",
+                            "verbose_name": "liw",
+                            "create_at": "2023-03-29T20:10:58.858000Z",
+                            "companytype": 1,
+                            "manager": 1
+                        },
+                        "branch": {
+                            "id": 1,
+                            "manager": {
+                                "id": 1,
+                                "email": "five@gmail.com"
+                            },
+                            "name": "Liwa Branch",
+                            "verbose_name": "liw",
+                            "create_at": "2023-03-29T20:14:24.207000Z"
+                        },
+                        "verbose_name": "liw"
+                    },
+                    "open_at": "22:20:00",
+                    "close_at": "22:26:00"
+                }
+
+
+
+- localhost/api/branch-current-status-full-data/
+        methods : GET
+        description:
+            - GET Branch Current Status Full Data
+        Response-Body For EXAMPLE:
+                {
+                "id": 1,
+                "company_branch": {
+                    "id": 1,
+                    "company": {
+                        "id": 1,
+                        "name": "Liwa",
+                        "verbose_name": "liw",
+                        "create_at": "2023-03-29T20:10:58.858000Z",
+                        "companytype": 1,
+                        "manager": 1
+                    },
+                    "branch": {
+                        "id": 1,
+                        "manager": {
+                            "id": 1,
+                            "email": "five@gmail.com"
+                        },
+                        "name": "Liwa Branch",
+                        "verbose_name": "liw",
+                        "create_at": "2023-03-29T20:14:24.207000Z"
+                    },
+                    "verbose_name": "liw"
+                },
+                "status": {
+                    "id": 1,
+                    "language": {
+                        "id": 1,
+                        "language": "en"
+                    },
+                    "status": "Done"
+                }
+                }
+
+
+
+
+- localhost/api/branch-service-price-full-data/
+        methods : GET
+        description:
+            - GET Branch Service Price Full Data
+        Response-Body For EXAMPLE:
+                {
+                    "id": 1,
+                    "company_branch": {
+                        "id": 1,
+                        "company": {
+                            "id": 1,
+                            "name": "Liwa",
+                            "verbose_name": "liw",
+                            "create_at": "2023-03-29T20:10:58.858000Z",
+                            "companytype": 1,
+                            "manager": 1
+                        },
+                        "branch": {
+                            "id": 1,
+                            "manager": {
+                                "id": 1,
+                                "email": "five@gmail.com"
+                            },
+                            "name": "Liwa Branch",
+                            "verbose_name": "liw",
+                            "create_at": "2023-03-29T20:14:24.207000Z"
+                        },
+                        "verbose_name": "liw"
+                    },
+                    "service_price": "12.00"
+                }
+

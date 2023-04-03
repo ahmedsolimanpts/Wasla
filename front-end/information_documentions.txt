@@ -1,0 +1,324 @@
+Website Url:
+- https://big-pizza.onrender.com/
+
+- localhost/api/language/
+        methods : GET / POST
+        description:
+            - GET All Languages OR add new One
+        Request-Body for POST :
+                {
+                    "language": STRING, # REQUIERD
+                }
+
+- localhost/language/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Language By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "language": STRING, # REQUIERD
+                }
+
+
+- localhost/api/country/
+        methods : GET / POST
+        description:
+            - GET All Country OR add new One
+        Request-Body for POST :
+                {
+                    "country":  STRING, # REQUIERD
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+- localhost/country/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET country By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "country":  STRING, # REQUIERD
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+
+- localhost/api/city/
+        methods : GET / POST
+        description:
+            - GET All City OR add new One
+        Request-Body for POST :
+                {
+                    "city" :STRING, # REQUIERD
+                    "country": FOREGINKEY, # REQUIERD FOR TABEL "country"
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+- localhost/city/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET country By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "city" :STRING, # REQUIERD
+                    "country": FOREGINKEY, # REQUIERD FOR TABEL "country"
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+
+- localhost/api/city-district/
+        methods : GET / POST
+        description:
+            - GET All City District OR add new One
+        Request-Body for POST :
+                {
+                    "district" :STRING, # REQUIERD
+                    "city" : FOREGINKEY, # REQUIERD FOR TABEL "city"
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+- localhost/city-district/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET city District By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "district" :STRING, # REQUIERD
+                    "city" : FOREGINKEY, # REQUIERD FOR TABEL "city"
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+
+- localhost/api/valid-information/
+        methods : GET / POST
+        description:
+            - GET All valid Informations OR add new One
+        Request-Body for POST :
+                {
+                    "valid" : BOOLEAN, # REQUIERD
+                    "informations": FOREGINKEY, # REQUIERD FOR TABEL "informations"
+                }
+
+- localhost/valid-information/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET valid Informations  By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "valid" : BOOLEAN, # REQUIERD
+                    "informations": FOREGINKEY, # REQUIERD FOR TABEL "informations"
+                }
+
+- localhost/api/country-lang/{pk}
+        methods : GET
+        description:
+            - GET  All countries That have the same language by send id for languge you want in the url {pk}
+
+        Response-Body:
+                {
+                    "country":  STRING, # REQUIERD
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+
+- localhost/api/currency/
+        methods : GET / POST
+        description:
+            - GET All Currency OR add new One
+        Request-Body for POST :
+                {
+                    "currency" : STRING, # REQUIERD
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+- localhost/api/currency/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Currency By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "currency" : STRING, # REQUIERD
+                    "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
+                }
+
+
+
+- localhost/api/phone/
+        methods : GET / POST
+        description:
+            - GET All Phone OR add new One
+        Request-Body for POST :
+                {
+                    "phone" : STRING, # REQUIERD
+                }
+
+- localhost/api/phone/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Phone  By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "phone" : STRING, # REQUIERD
+                }
+
+- localhost/api/phone/
+        methods : GET / POST
+        description:
+            - GET All Phone OR add new One
+        Request-Body for POST :
+                {
+                    "phone" : STRING, # REQUIERD
+                }
+
+- localhost/api/phone/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Phone  By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "phone" : STRING, # REQUIERD
+                }
+
+
+- localhost/api/address/
+        methods : GET / POST
+        description:
+            - GET All address OR add new One
+        Request-Body for POST :
+                {
+                    "district" : FOREIGNEKEY, # REQUIERD FOR TABEL "city-district"
+                    "building_number": STRING, # REQUIERD
+                    "street":STRING, # REQUIERD
+                    "description": TEXT , OPTIONAL
+                }
+
+- localhost/api/address/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET address  By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "district" : FOREIGNEKEY, # REQUIERD FOR TABEL "city-district"
+                    "building_number": STRING, # REQUIERD
+                    "street":STRING, # REQUIERD
+                    "description": TEXT , OPTIONAL
+                }
+
+- localhost/api/location/
+        methods : GET / POST
+        description:
+            - GET All location OR add new One
+        Request-Body for POST :
+                {
+                    "longitude": DECIMAL, # REQUIERD
+                    "latitude":DECIMAL, # REQUIERD
+                }
+
+- localhost/api/location/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET location By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "longitude": DECIMAL, # REQUIERD
+                    "latitude":DECIMAL, # REQUIERD
+                }
+
+
+
+- localhost/api/country-full-data/
+        methods : GET
+        description:
+            - GET  All countries with AND LANGUAGES VALUE
+
+        Response-Body EXAMPLE:
+             {
+                "id": 3,
+                "language": {
+                    "id": 2,
+                    "language": "en"
+                },
+                "country": "England"
+               }
+
+
+- localhost/api/city-full-data/
+        methods : GET
+        description:
+            - GET  All city with ALL Related VALUE
+
+        Response-Body EXAMPLE:
+             {
+                "id": 1,
+                "language": {
+                    "id": 2,
+                    "language": "en"
+                },
+                "country": {
+                    "id": 1,
+                    "country": "Egypt",
+                    "language": 2
+                },
+                "city": "Cairo"
+             }
+
+
+- localhost/api/city-district-full-data/
+        methods : GET
+        description:
+            - GET  All city district with ALL Related VALUE
+
+        Response-Body EXAMPLE:
+             {
+                "id": 1,
+                "language": {
+                    "id": 2,
+                    "language": "en"
+                },
+                "city": {
+                    "id": 1,
+                    "city": "Cairo",
+                    "language": 2,
+                    "country": 1
+                },
+                "district": "Blot"
+             }
+
+
+
+- localhost/api/address-full-data/
+        methods : GET
+        description:
+            - GET  All Address with ALL Related VALUE
+
+        Response-Body EXAMPLE:
+             {
+                "id": 1,
+                "district": {
+                    "id": 1,
+                    "language": {
+                        "id": 1,
+                        "language": "ar"
+                    },
+                    "city": {
+                        "id": 1,
+                        "city": "Cairo",
+                        "language": 1,
+                        "country": 1
+                    },
+                    "district": "Blot"
+                },
+                "street": "new twsese",
+                "building_number": "115",
+                "description": "new"
+             }
+
+
+
+- localhost/api/currency-full-data/
+        methods : GET
+        description:
+            - GET  All currency with ALL Related VALUE
+
+        Response-Body EXAMPLE:
+             {
+
+             }
