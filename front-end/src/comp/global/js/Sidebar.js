@@ -4,46 +4,42 @@ import { NavLink } from "react-router-dom";
 
 function Sidebar() {
   return (
-    <div className="sidebar">
+    <div className="sidebar bg-white position-fixed bottom-0 py-4 z-2">
       <div
-        className="gear"
+        className="gear position-absolute p-2 text-white cr-pointer tr-main rounded-end"
         onClick={() => {
           document.querySelector(".sidebar").classList.toggle("open");
         }}
       >
         <i className="fa-solid fa-gear fa-spin"></i>
       </div>
-      <ul>
-        <NavLink to="/company">
-          <i className="fa-regular fa-building fa-fw"></i>
+      <ul className="p-0 m-0">
+        <NavLink
+          to="/company"
+          className="d-block p-3 rounded-3 text-black cr-pointer mx-3 mb-1"
+        >
+          <i className="fa-regular fa-building fa-fw me-2"></i>
           <span>Company</span>
         </NavLink>
-        <NavLink to="/auth">
-          <i className="fa-solid fa-user-lock fa-fw"></i>
+        <NavLink
+          to="/auth"
+          className="d-block p-3 rounded-3 text-black cr-pointer mx-3 mb-1"
+        >
+          <i className="fa-solid fa-user-lock fa-fw me-2"></i>
           <span>Auth</span>
         </NavLink>
-        <NavLink to="/branch">
-          <i className="fa-solid fa-code-branch"></i>
+        <NavLink
+          to="/branch"
+          className="d-block p-3 rounded-3 text-black cr-pointer mx-3 mb-1"
+        >
+          <i className="fa-solid fa-code-branch me-2"></i>
           <span>Branch</span>
         </NavLink>
-        <NavLink to="/login">
-          <i className="fa-regular fa-chart-bar fa-fw"></i>
-          <span>Test four</span>
-        </NavLink>
-        <NavLink to="/login">
-          <i className="fa-regular fa-chart-bar fa-fw"></i>
-          <span>Test five</span>
-        </NavLink>
-        <NavLink to="/login">
-          <i className="fa-regular fa-chart-bar fa-fw"></i>
-          <span>Test six</span>
-        </NavLink>
-        <NavLink to="/login">
-          <i className="fa-regular fa-chart-bar fa-fw"></i>
-          <span>Test seven</span>
-        </NavLink>
-        <NavLink to="/info">
-          <i className="fa-solid fa-circle-info fa-fw"></i>
+        <NavLink
+          to="/info"
+          className="d-block p-3 rounded-3 text-black cr-pointer mx-3 mb-1"
+        >
+          <i className="fa-solid fa-circle-info fa-fw me-2"></i>
           <span>Information</span>
         </NavLink>
       </ul>

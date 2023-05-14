@@ -1,0 +1,13 @@
+.sidebarUser {
+    box-shadow: 0 -8px 10px #ddd;
+    width: 155px;
+}
+.sidebarUser ul li:hover {
+    background-color: #ececec;
+}
+.sidebarUser ul a:hover {
+    background-color: #ececec;
+}
+.contentUser {
+    width: calc(100% - 155px);
+}

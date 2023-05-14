@@ -19,6 +19,25 @@ Website Url:
                     "language": STRING, # REQUIERD
                 }
 
+- localhost/api/company-type/
+        methods : GET / POST
+        description:
+            - GET All Company Types OR add new One
+        Request-Body for POST OR:
+                {
+                    "type": STRING, # REQUIERD
+                    "language": PRIMARYKEY, # REQUIERD FOR TABEL NAME "language"
+                }
+
+- localhost/company-type/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Company Type By id OR update by ID  OR Delete company Type
+        Request-Body FOR UPDATE:
+                {
+                    "type": STRING, # REQUIERD
+                    "language":PRIMARY_KEY, # REQUIERD FOR TABEL NAME "language"
+                }
 
 - localhost/api/country/
         methods : GET / POST
@@ -39,7 +58,6 @@ Website Url:
                     "country":  STRING, # REQUIERD
                     "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
                 }
-
 
 - localhost/api/city/
         methods : GET / POST
@@ -63,7 +81,6 @@ Website Url:
                     "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
                 }
 
-
 - localhost/api/city-district/
         methods : GET / POST
         description:
@@ -85,7 +102,6 @@ Website Url:
                     "city" : FOREGINKEY, # REQUIERD FOR TABEL "city"
                     "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
                 }
-
 
 - localhost/api/valid-information/
         methods : GET / POST
@@ -118,7 +134,6 @@ Website Url:
                     "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
                 }
 
-
 - localhost/api/currency/
         methods : GET / POST
         description:
@@ -139,9 +154,102 @@ Website Url:
                     "language": FOREGINKEY, # REQUIERD FOR TABEL "language"
                 }
 
+- localhost/api/phone/
+        methods : GET / POST
+        description:
+            - GET All Phone OR add new One
+        Request-Body for POST :
+                {
+                    "phone" : STRING, # REQUIERD
+                }
+
+- localhost/api/phone/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Phone  By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "phone" : STRING, # REQUIERD
+                }
+
+- localhost/api/phone/
+        methods : GET / POST
+        description:
+            - GET All Phone OR add new One
+        Request-Body for POST :
+                {
+                    "phone" : STRING, # REQUIERD
+                }
+
+- localhost/api/phone/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET Phone  By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "phone" : STRING, # REQUIERD
+                }
+
+- localhost/api/address/
+        methods : GET / POST
+        description:
+            - GET All address OR add new One
+        Request-Body for POST :
+                {
+                    "district" : FOREIGNEKEY, # REQUIERD FOR TABEL "city-district"
+                    "building_number": STRING, # REQUIERD
+                    "street":STRING, # REQUIERD
+                    "description": TEXT , OPTIONAL
+                }
+
+- localhost/api/address/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET address  By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "district" : FOREIGNEKEY, # REQUIERD FOR TABEL "city-district"
+                    "building_number": STRING, # REQUIERD
+                    "street":STRING, # REQUIERD
+                    "description": TEXT , OPTIONAL
+                }
+
+- localhost/api/location/
+        methods : GET / POST
+        description:
+            - GET All location OR add new One
+        Request-Body for POST :
+                {
+                    "longitude": DECIMAL, # REQUIERD
+                    "latitude":DECIMAL, # REQUIERD
+                }
+
+- localhost/api/location/{pk}
+        methods : GET / PUT / DELETE
+        description:
+            - GET location By id OR update by ID  OR Delete
+        Request-Body FOR UPDATE:
+                {
+                    "longitude": DECIMAL, # REQUIERD
+                    "latitude":DECIMAL, # REQUIERD
+                }
 
 
-- localhost/api/country-country-full-detail/
+- localhost/api/company-type-full-data/
+        methods : GET
+        description:
+            - GET ALL Company Type With all related Data
+        Response-Body Example:
+                {
+                "id": 3,
+                "language": {
+                    "id": 2,
+                    "language": "en"
+                },
+                "type": "Drink"
+                }
+
+- localhost/api/country-full-data/
         methods : GET
         description:
             - GET  All countries with AND LANGUAGES VALUE
@@ -156,8 +264,7 @@ Website Url:
                 "country": "England"
                }
 
-
-- localhost/api/city-full-detail/
+- localhost/api/city-full-data/
         methods : GET
         description:
             - GET  All city with ALL Related VALUE
@@ -177,8 +284,7 @@ Website Url:
                 "city": "Cairo"
              }
 
-
-- localhost/api/city-district-full-detail/
+- localhost/api/city-district-full-data/
         methods : GET
         description:
             - GET  All city district with ALL Related VALUE
@@ -197,4 +303,41 @@ Website Url:
                     "country": 1
                 },
                 "district": "Blot"
+             }
+
+- localhost/api/address-full-data/
+        methods : GET
+        description:
+            - GET  All Address with ALL Related VALUE
+
+        Response-Body EXAMPLE:
+             {
+                "id": 1,
+                "district": {
+                    "id": 1,
+                    "language": {
+                        "id": 1,
+                        "language": "ar"
+                    },
+                    "city": {
+                        "id": 1,
+                        "city": "Cairo",
+                        "language": 1,
+                        "country": 1
+                    },
+                    "district": "Blot"
+                },
+                "street": "new twsese",
+                "building_number": "115",
+                "description": "new"
+             }
+
+- localhost/api/currency-full-data/
+        methods : GET
+        description:
+            - GET  All currency with ALL Related VALUE
+
+        Response-Body EXAMPLE:
+             {
+
              }

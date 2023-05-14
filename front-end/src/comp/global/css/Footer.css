@@ -1,179 +1,37 @@
 .footer {
-    padding: 50px 0;
-    background-color: var(--dark-color);
+    padding: 12px 20px;
 }
-.footer .container {
-    display: flex;
-    flex-wrap: wrap;
+.footer .container-footer {
+    justify-content: space-between;
+    gap: 10px;
 }
-.footer h5 {
-    font-size: 20px;
-    margin: 0 0 8px;
-    padding: 0 0 8px;
-    color: #fff;
+@media (max-width: 500px) {
+    .footer .container-footer {
+        justify-content: center;
+    }
 }
-.footer  ul li {
-    color: #ffffff80;
-    padding: 0 0 20px;
-}
-.footer .box-copy {
-    padding: 0 12px;
-    margin: 0 0 40px;
-}
-.footer .box-copy img {
-    width: 140px;
-    height: auto;
-    padding: 0 0 25px;
-}
-.footer .box-copy p {
-    color: #ffffff80;
-    margin: 0 0 16px;
-    padding: 0 0 25px;
-    line-height: 1.4;
-    width: 90%;
-}
-.footer .box-copy span {
-    display: block;
-    color: #ffffff80;
-    padding-bottom: 5px;
-}
-.footer .box-copy span span {
-    display: unset;
-    color: var(--active-color);
-}
-.footer .box-links {
-    padding: 7px 12px 0;
-}
-.footer .box-about {
-    padding: 7px 12px 0;
-}
-.footer .box-contact {
-    padding: 7px 12px 0;
-}
-.footer .box-contact form {
-    margin: 0 0 25px;
-}
-.footer .box-contact form input {
-    width: 100%;
-    margin: 0 0 10px;
-    padding: 10px;
-    border-radius: 6px;
-    background-color: #c7c7c7;
-    font-size: 14px;
-}
-.footer .box-contact form textarea {
-    width: 100%;
-    margin: 0 0 10px;
-    padding: 10px;
-    border-radius: 6px;
-    background-color: #c7c7c7;
-    height: 120px;
-    resize: none;
-    font-size: 14px;
-}
-.footer .box-contact form input:focus,
-.footer .box-contact form input:hover,
-.footer .box-contact form textarea:focus,
-.footer .box-contact form textarea:hover {
-    box-shadow: 0 5px 15px 0 rgb(254 254 254 / 15%);
-}
-.footer .box-contact form button {
-    display: block;
-    width: 100%;
-    background-color: #009688;
-    padding: 8px 15px;
-    color: #fff;
-    font-weight: bold;
-    border-radius: 6px;
-    transition: 0.3s;
-    border: 1px solid transparent;
-    cursor: pointer;
-}
-.footer .box-contact form button:hover {
-    background-color: transparent;
-    border: 1px solid #fff;
-}
-.footer .box-contact .social-icon {
-    text-align: center;
-}
-.footer .box-contact .social-icon svg {
-    margin: 0 8px;
-    padding: 10px;
+.footer .box-social .social-icon svg {
+    margin: 0 6px;
+    padding: 7px;
     border-radius: 50%;
     color: #fff;
-    font-size: 17px;
     border: 1px solid transparent;
     transition: 0.3s;
     cursor: pointer;
 }
-.footer .box-contact .social-icon svg:first-child {
+.footer .box-social .social-icon svg:first-child {
     background-color: #1877f2;
 }
-.footer .box-contact .social-icon svg:nth-child(2) {
+.footer .box-social .social-icon svg:nth-child(2) {
     background-color: #1da1f2;
 }
-.footer .box-contact .social-icon svg:nth-child(3) {
+.footer .box-social .social-icon svg:nth-child(3) {
     background-color: #0077b5;
 }
-.footer .box-contact .social-icon svg:last-child {
+.footer .box-social .social-icon svg:last-child {
     background-color: #6e5494;
 }
-.footer .box-contact .social-icon svg:hover {
+.footer .box-social .social-icon svg:hover {
     background: #c7c7c724;
     border: 1px solid #fff;
-}
-
-@media (max-width: 767px) {
-    .footer .box-copy {
-        flex: 0 0 auto;
-        width: 100%;
-    }
-    .footer .box-links {
-        flex: 0 0 auto;
-        width: 100%;
-    }
-    .footer .box-about {
-        flex: 0 0 auto;
-        width: 100%;
-    }
-    .footer .box-contact {
-        flex: 0 0 auto;
-        width: 100%;
-    }
-}
-@media (min-width: 768px) {
-    .footer .box-copy {
-        flex: 0 0 auto;
-        width: 50%;
-    }
-    .footer .box-links {
-        flex: 0 0 auto;
-        width: 50%;
-    }
-    .footer .box-about {
-        flex: 0 0 auto;
-        width: 50%;
-    }
-    .footer .box-contact {
-        flex: 0 0 auto;
-        width: 50%;
-    }
-}
-@media (min-width: 992px) {
-    .footer .box-copy {
-        flex: 0 0 auto;
-        width: 33.33333333%;
-    }
-    .footer .box-links {
-        flex: 0 0 auto;
-        width: 16.66666667%;
-    }
-    .footer .box-about {
-        flex: 0 0 auto;
-        width: 16.66666667%;
-    }
-    .footer .box-contact {
-        flex: 0 0 auto;
-        width: 33.33333333%;
-    }
 }

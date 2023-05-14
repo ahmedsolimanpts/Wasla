@@ -1,45 +1,69 @@
--- Name                     [Create]    [Edit & Delete]
+===============================================[New Design List]======================================
+{Home} => Done
+{Nav} => Done
+{Footer} => Done
+{Login} => Done
+{Sign Up} => Done
+{Admin} => Done
+{NavLog} => Done
+{Sidebar} => Done
 
--- Branch                   [Done]          [Done]
--- Company Branch           [Done]          [Done] 
--- Branch Phone             [Done]          [Done]
--- Branch Address           [Done]          [Done]
--- Branch Location          [Done]          [Done]
--- Branch Status            [Done]          [Done]
--- Branch Current Status    [Done]          [Done]
--- Branch Service Price     [Done]          [Done]
--- Branch Work Time         [Done]          [Done]
+{Company} => Done
+{All Company} => Done
+{Company Manager} => Done
+{Company Phone} => Done
+{Company Location} => Done
+{Company Address} => Done
+
+{Auth} => Done
+{Feature} => Done
+{User Permissions} => Done
+{Liciens} => Done
+{Privileges} => Done
+
+{Branch} => Done
+{Branch Manager} => Done
+{Branch Phone} => Done
+{Branch Location} => Done
+{Branch Address} => Done
+{Branch Status} => Done
+{Branch Current Status} => Done
+{Branch Service Price} => Done
+{Branch Work Time} => Done
+
+{Info} => Done
+{Language} => Done
+{Company Type} => Done
+{Country} => Done
+{City} => Done
+{City District} => Done
+{Currency} => Done
+{Phone} => Done
+{Location} => Done
+{Address} => Done
+
+{AuthR} => Done
+{BranchR} => Done
+{CompanyR} => Done
+{HomeR} => Done
+{InfoR} => Done
+{SignR} => Done
 
 
 
-[Branch] =>
-
-[Company] => Done 
-
-[Auth] => Done
-
-[Information] => Done
-
-
-
-[Scroll Top Button] =>
-[All Auth] => 
-[All Information] =>
-[All Company] =>
-[All Branch] =>
+{user} => Done
+{information} => Done
+{home} => Done
+{global} => Done
+{company} => Done
+{branch} => Done
+{authorization} => Done
 
 
-[Company] => Done
-[Branch] => Done
-[Auth] =>
-[Information] =>
+const token = window.localStorage.getItem("access");
 
-get new Design
-
-
-Del => 
-.then((res) => {
-      if (res.status === 204) {
-        Test();
-      }
-    })
+        {
+          headers: {
+            Authorization: `Bearer ${token}`,
+          },
+        }

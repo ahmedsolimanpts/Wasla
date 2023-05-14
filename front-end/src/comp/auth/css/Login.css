@@ -1,139 +1,52 @@
-.login {
-    min-height: 100vh;
-    width: 100%;
-    background-color: var(--section-color);
-    padding-bottom: 20px;
-}
-.login .logo {
-    margin: auto;
-    border-radius: 50%;
-    padding: 20px;
-    text-align: center;
-} 
-.login .logo img {
-    width: 120px;
-    height: auto;
-    border-radius: 50%;
-} 
-.login h1 {
-    text-align: center;
-    font-size: 36px;
-    color: var(--gray-color);
-    margin: 0 0 30px;
-} 
 .login form {
-    width: 450px;
-    padding: 30px;
-    margin: auto;
-    background-color: var(--section-color);
-    box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.1);
-    border-radius: 4px;
-} 
-.login form label {
-    font-size: 14px;
-    color: var(--gray-color);
-}  
-.login form .box-input {
-    display: flex;
-    align-items: center;
-    border: 1px solid #acacad;
-    background-color: var(--section-color);
-    border-radius: 4px;
-    margin: 7px 0 20px;
-}  
+  width: 450px;
+  box-shadow: 0px 10px 30px 0px rgba(0, 0, 0, 0.1);
+}
 .login form .box-input svg {
-    width: 50px;
-    color: var(--gray-color);
-}  
-.login form .box-input input {
-    padding: 15px;
-    width: 100%;
-    border-radius: 4px;
-    height: 100%;
-    border-left: 1px solid #e0e0e0;
-    border-top-left-radius: unset;
-    border-bottom-left-radius: unset;
-    background-color: var(--section-color);
-} 
+  width: 50px;
+  color: var(--gray-color);
+}
 .login form .box-input input::placeholder {
-    font-size: 14px;
-    color: #acacad;
+  font-size: 14px;
+  color: #acacad;
 }
 .login form .box-input input:focus,
 .login form .box-input input:hover {
-    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1);
-} 
-.login form .loginMsg {
-    background-color: #ffdbe3;
-    display: none;
-    justify-content: space-between;
-    align-items: center;
-    padding: 7px;
-    margin-bottom: 10px;
-    border-radius: 6px;
-}
-.login form .loginMsg h2 {
-    color: #cd1532;
-    font-size: 15px;
-    font-weight: 400;
-    text-align: center;
-    margin: 0;
-}
-.login form .loginMsg div {
-    background-color: #cd1532;
-    color: #fff;
-    width: 25px;
-    height: 25px;
-    border-radius: 50%;
-    margin: 0;
-    cursor: pointer;
-    transition: 0.3s;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-.login form .loginMsg div:hover {
-    background-color: #bf1e37;
+  box-shadow: 0 5px 15px 0 rgba(0, 0, 0, 0.1);
 }
 .login form .loginBtn {
-    display: block;
-    width: 70%;
-    background-color: var(--dark-color);
-    border: 1px solid var(--dark-color);
-    padding: 15px;
-    border-radius: 50px;
-    font-weight: bold;
-    color: #fff;
-    cursor: pointer;
-    margin: 30px auto 25px;
-    transition: 0.3s;
+  border: 1px solid transparent;
+  cursor: pointer;
+  margin: 30px auto 25px;
 }
-.login form .loginBtn:hover {
-    background-color: transparent;
-    color: var(--dark-color);
+.login form .loginBtn:not(:disabled):hover {
+  background-color: transparent !important;
+  border: 1px solid var(--dark-color);
+  color: var(--dark-color) !important;
 }
-.login form .box-btn {
-    display: flex;
+.login form .loginBtn:disabled {
+  background-color: #102f4470 !important;
+  cursor: not-allowed;
+}
+.login form .loginBtn:disabled span {
+  font-size: 25px;
+  width: 25px;
+  height: 25px;
 }
 .login form .box-btn a {
-    color: var(--dark-color);
-    font-size: 14px;
-    transition: 0.3s;
-    font-weight: bold;
-    flex: 1;
-    text-align: center;
+  flex: 1;
 }
 .login form .box-btn a:hover {
-    color: var(--gray-color);
-    text-decoration: underline;
+  color: var(--gray-color) !important;
+  text-decoration: underline !important;
 }
 
 @media (max-width: 500px) {
-    .login h1 {
-        font-size: 26px;
-    }
-    .login form {
-        width: 100%;
-        box-shadow: none;
-    }
+  .login h1 {
+    font-size: 26px;
+  }
+  .login form {
+    width: 100%;
+    box-shadow: none;
+  }
 }

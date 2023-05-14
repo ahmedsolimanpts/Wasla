@@ -1,0 +1,32 @@
+.notFound {
+    max-width: 410px;
+    user-select: none;
+}
+.notFound .notFound-404 {
+    height: 280px;
+    z-index: -1;
+}
+.notFound .notFound-404 h1 {
+    font-size: 230px;
+    font-weight: 900;
+    background: url("../../../imgs/notFound.jpg") no-repeat;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: cover;
+    background-position: center;
+}
+.notFound a {
+    box-shadow: 0px 4px 15px -5px var(--dark-color);
+}
+.notFound a:hover {
+    background-color: #335166 !important;
+}
+
+@media (max-width: 767px) { 
+    .notFound .notFound-404 {
+        height: 142px;
+    }
+    .notFound .notFound-404 h1 {
+        font-size: 112px;
+    }
+}
