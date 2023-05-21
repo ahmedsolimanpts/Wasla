@@ -1,0 +1,67 @@
+.sign-container .signup {
+    box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.1);
+}
+.signup .logo {
+    flex: 1;
+    background-color: #102f4408;
+}
+.signup .logo img {
+    width: 160px;
+    box-shadow: 0px 10px 30px 0px rgb(0 0 0 / 20%);
+}
+.signup .content {
+    flex: 1;
+    background-color: #f1f5f9;
+}
+.signup .content form input::placeholder {
+    font-size: 14px;
+    color: #acacad;
+}
+.signup .content form input:focus,
+.signup .content form input:hover{
+    box-shadow: 0 5px 15px 0 rgba(0,0,0,0.1);
+}
+.signBtn form .showPass {
+    cursor: pointer;
+}
+.signup form .signBtn {
+    border: 1px solid transparent;
+    cursor: pointer;
+    margin: 30px auto 25px;
+}
+.signup form .signBtn:not(:disabled):hover {
+    background-color: transparent !important;
+    border: 1px solid var(--dark-color);
+    color: var(--dark-color) !important;
+}
+.signup form .signBtn:disabled {
+    background-color: #102f4470 !important;
+    cursor: not-allowed;
+}
+.signup form .signBtn:disabled span {
+    font-size: 25px;
+    width: 25px;
+    height: 25px;
+}
+.signup .content form a:hover {
+    color: var(--gray-color) !important;
+    text-decoration: underline !important;
+}
+
+@media (max-width: 767px) {
+    .sign-container {
+        display: block !important;
+        padding: 0 !important;
+    }
+    .sign-container .signup {
+        width: 100% !important;
+        display: block !important;
+        height: 100vh !important;
+    }
+    .signup .logo {
+        padding: 20px !important;
+    }
+    .signup .content {
+        padding: 30px !important;
+    }
+}

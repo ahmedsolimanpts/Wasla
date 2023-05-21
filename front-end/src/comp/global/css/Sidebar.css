@@ -1,0 +1,35 @@
+.sidebar {
+    left: -187px;
+    height: calc(100vh - 56px);
+    transition: 0.5s;
+}
+.sidebar.open {
+    left: 0;
+    box-shadow: 0 0 10px #ddd;
+}
+.sidebar .gear {
+    right: -34px;
+    top: 25%;
+    transform: translateY(-25%);
+    background-color: #102f44;
+    font-size: 18px;
+}
+.sidebar .gear:hover svg,
+.sidebar.open .gear svg {
+    transform: rotate(360deg);
+    animation-name: rotate;
+    animation-iteration-count: infinite;
+    animation-duration: 1s;
+}
+@keyframes rotate {
+    0% {
+        transform: rotate(0);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+.sidebar ul a.active,
+.sidebar ul a:hover {
+    background-color: #f2f2f2;
+}

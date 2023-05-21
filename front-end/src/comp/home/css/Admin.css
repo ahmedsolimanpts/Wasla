@@ -1,0 +1,8 @@
+.admin a {
+    border: 1px solid transparent;
+}
+.admin a:hover {
+    background-color: transparent !important;
+    border: 1px solid var(--dark-color);
+    color: var(--dark-color) !important;
+}
